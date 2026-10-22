@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+node_modules/
+.next/
+out/
+data/bitext.csv
+resonance-report.json
+simulated-tickets.csv
+.pytest_cache/
