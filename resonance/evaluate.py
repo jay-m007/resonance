@@ -111,6 +111,9 @@ def evaluate_topics(tickets: list[Ticket], seed: int = 0, methods: list[str] | N
     return {"tickets": len(labelled), "true_intents": n_true, "methods": results}
 
 
+HIT_SHARE = 0.25
+
+
 def evaluate_trends(pool: list[Ticket], runs: int = 10, factor: float = 3.0, seed: int = 0, per_day: int = 120) -> dict:
     """Simulates `runs` months, each with a different random intent spiking, and checks detection."""
     labels = sorted({t.label for t in pool if t.label})
@@ -120,10 +123,16 @@ def evaluate_trends(pool: list[Ticket], runs: int = 10, factor: float = 3.0, see
     for i, spike in enumerate(spikes):
         tickets, _ = simulate(pool, spike=spike, spike_factor=factor, seed=seed + i, per_day=per_day)
         r = analyze(tickets, seed=seed)
+        label_of = {t.id: t.label for t in tickets}
+        def spike_share(issue: dict) -> float:
+            ids = issue["ticket_ids"]
+            return sum(label_of[i] == spike for i in ids) / max(1, len(ids))
         rising = [x for x in r["issues"] if x["trend"]["status"] in ("rising", "new")]
-        hits = [x for x in rising if x.get("label", {}).get("majority") == spike]
-        false_alarms = [x for x in rising if x.get("label", {}).get("majority") != spike]
-        spike_rank = next((x["rank"] for x in r["issues"] if x.get("label", {}).get("majority") == spike), None)
+        # A rising topic counts as catching the spike if at least a quarter of it is the spiking intent:
+        # the spike's tickets are often split across a few topics, each of which then rises.
+        hits = [x for x in rising if spike_share(x) >= HIT_SHARE]
+        false_alarms = [x for x in rising if spike_share(x) < HIT_SHARE]
+        spike_rank = next((x["rank"] for x in r["issues"] if spike_share(x) >= HIT_SHARE), None)
         rows.append({"spike": spike, "detected": bool(hits), "false_alarms": len(false_alarms), "top_rank_of_spike": spike_rank, "rising": len(rising)})
     n = len(rows)
     return {

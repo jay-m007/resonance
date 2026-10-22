@@ -60,6 +60,20 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--per-day", type=int, default=120)
     s.add_argument("--seed", type=int, default=0)
 
+    e = sub.add_parser("eval", help="measure topic quality and trend detection on a labelled dataset")
+    e.add_argument("input", help="a labelled dataset, e.g. the Bitext CSV")
+    e.add_argument("--runs", type=int, default=10, help="simulated months for the trend test (default 10)")
+    e.add_argument("--factor", type=float, default=3.0, help="spike size for the trend test (default 3x)")
+    e.add_argument("--per-day", type=int, default=120, help="tickets per simulated day (default 120)")
+    e.add_argument("--skip-trends", action="store_true")
+    e.add_argument("-o", "--out", help="also write the full results as JSON")
+
+    br = sub.add_parser("brief", help="add AI product briefs for the top issues to a report (needs OPENAI_API_KEY)")
+    br.add_argument("report")
+    br.add_argument("--top", type=int, default=3)
+    br.add_argument("--model")
+    br.add_argument("--base-url")
+
     f = sub.add_parser("fetch-data", help="download the Bitext customer-support dataset (26,872 labelled messages, CDLA-Sharing 1.0)")
     f.add_argument("-o", "--out", default="data/bitext.csv")
 
@@ -82,6 +96,33 @@ def main(argv: list[str] | None = None) -> int:
             write_csv(tickets, args.out)
             print(f"Wrote {len(tickets):,} simulated tickets over {args.days} days to {args.out}. Spiking intent: {spike} (x{args.factor} in the final week).")
             print("This data is synthetic: real messages, made-up dates and customers.")
+            return 0
+        if args.cmd == "eval":
+            from .evaluate import evaluate_topics, evaluate_trends
+
+            pool = load_tickets(args.input)
+            res = {"topics": evaluate_topics(pool)}
+            t = res["topics"]
+            print(f"Topics: {t['tickets']:,} labelled tickets, {t['true_intents']} true intents\n")
+            print(f"{'method':<20}{'topics':>7}{'sorted':>8}{'NMI':>7}{'ARI':>7}{'NMI*':>7}{'ARI*':>7}{'purity':>8}")
+            for name, m in t["methods"].items():
+                print(f"{name:<20}{m['topics']:>7}{m['coverage']:>8.0%}{m['nmi']:>7.3f}{m['ari']:>7.3f}{m['nmi_all']:>7.3f}{m['ari_all']:>7.3f}{m['purity']:>8.3f}")
+            print("\nNMI/ARI: on sorted tickets. NMI*/ARI*: counting unsorted tickets as one more topic (like for like).")
+            if not args.skip_trends:
+                tr = evaluate_trends(pool, runs=args.runs, factor=args.factor, per_day=args.per_day)
+                res["trends"] = tr
+                print(f"\nTrends: {tr['runs']} simulated months, one intent x{tr['factor']} in the final week, {args.per_day} tickets/day")
+                print(f"  spike detected: {tr['detection_rate']:.0%}   false alarms per month: {tr['false_alarms_per_run']}   spike ranked #1: {tr['spike_ranked_first']:.0%}")
+            if args.out:
+                Path(args.out).write_text(json.dumps(res, indent=1), encoding="utf-8")
+            return 0
+        if args.cmd == "brief":
+            from .brief import add_briefs
+
+            report = json.loads(Path(args.report).read_text(encoding="utf-8"))
+            n = add_briefs(report, top=args.top, model=args.model, base_url=args.base_url)
+            Path(args.report).write_text(json.dumps(report, indent=1), encoding="utf-8")
+            print(f"Added {n} AI-written briefs to {args.report}. Open it in the dashboard to read them; check them before acting.")
             return 0
         if args.cmd == "fetch-data":
             out = Path(args.out)
