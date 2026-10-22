@@ -84,12 +84,16 @@ export function VolumeChart(props: { series: number[]; starts: string[]; unit: "
           </span>
         ) : (
           <span className="vchart__legend">
-            <span className="key key--bar" aria-hidden="true" /> earlier
-            <span className="key key--recent" aria-hidden="true" /> recent {recent} {unit}s
+            <span className="legend-item">
+              <span className="key key--bar" aria-hidden="true" /> earlier
+            </span>
+            <span className="legend-item">
+              <span className="key key--recent" aria-hidden="true" /> recent {recent} {unit}s
+            </span>
             {perPeriod > 0 && (
-              <>
+              <span className="legend-item">
                 <span className="key key--expected" aria-hidden="true" /> expected ({perPeriod.toFixed(1)} per {unit})
-              </>
+              </span>
             )}
           </span>
         )}

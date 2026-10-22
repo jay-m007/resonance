@@ -1,0 +1,5 @@
+The file report.json in this folder contains customer-support messages from the Bitext
+"Customer Service Tagged Training Dataset for LLM-based Virtual Assistants"
+(https://github.com/bitext/customer-support-llm-chatbot-training-dataset),
+(c) Bitext, licensed under the Community Data License Agreement - Sharing - Version 1.0.
+Dates and customer identifiers in the report are simulated.
