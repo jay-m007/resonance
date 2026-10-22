@@ -8,11 +8,13 @@ week for everyone isn't mistaken for a spike, and one topic spiking doesn't
 make all the others look like they're falling (as scaling by the total would).
 
 The observed count is compared with that expectation using a Poisson test:
-how likely is a count at least this large by chance? A topic is flagged as
-rising only if the count is at least 1.5x the expectation, at least
-MIN_COUNT tickets, and the probability is below 0.01 divided by the number of
-topics (a Bonferroni correction: with 40 topics, testing each at 1% would
-raise a false alarm somewhere almost every time).
+how likely is a count at least this large by chance? Because dozens of topics
+are tested at once, the p-values are corrected with the Benjamini-Hochberg
+procedure (false discovery rate FDR = 5%): of the topics flagged, at most
+about 5% are expected to be false alarms. A topic is flagged as rising only if
+it passes that test, the count is at least 1.5x the expectation, and at least
+MIN_COUNT tickets. (A Bonferroni correction was tried first; it kept false
+alarms at zero but missed most real spikes on the benchmark.)
 """
 from __future__ import annotations
 
@@ -24,7 +26,7 @@ from scipy.stats import poisson
 
 MIN_COUNT = 5
 MIN_RATIO = 1.5
-ALPHA = 0.01
+FDR = 0.05
 
 
 @dataclass
@@ -35,6 +37,20 @@ class Trend:
     expected: float = 0.0
     ratio: float | None = None
     p_value: float | None = None
+
+
+def benjamini_hochberg(p: np.ndarray, q: float) -> np.ndarray:
+    """Which tests pass at false discovery rate q: sort p-values, find the largest i with p(i) <= q*i/m."""
+    m = len(p)
+    if m == 0:
+        return np.zeros(0, dtype=bool)
+    order = np.argsort(p)
+    passed = p[order] <= q * (np.arange(1, m + 1) / m)
+    ok = np.zeros(m, dtype=bool)
+    if passed.any():
+        last = np.max(np.where(passed)[0])
+        ok[order[: last + 1]] = True
+    return ok
 
 
 def periods(times: list[datetime | None]) -> tuple[list[datetime], str] | None:
@@ -78,11 +94,12 @@ def trends(labels: np.ndarray, times: list[datetime | None], n_topics: int) -> t
     window = max(1, min(7 if unit == "day" else 2, n_periods // 3))
     last_total = totals[-window:].sum()
     earlier_total = totals[:-window].sum()
-    alpha = ALPHA / max(1, n_topics)
     all_series = [np.bincount(b[(labels == j) & (b >= 0)], minlength=n_periods) for j in range(n_topics)]
     growth = [s[-window:].sum() / s[:-window].sum() for s in all_series if s[:-window].sum() >= MIN_COUNT]
     scale = float(np.median(growth)) if growth else (last_total / earlier_total if earlier_total else 0.0)
     out: list[Trend] = []
+    p_up = np.ones(n_topics)
+    p_down = np.ones(n_topics)
     for j in range(n_topics):
         series = all_series[j]
         latest = int(series[-window:].sum())
@@ -93,15 +110,20 @@ def trends(labels: np.ndarray, times: list[datetime | None], n_topics: int) -> t
             t.status = "new"
         elif expected > 0:
             t.ratio = round(latest / expected, 2)
-            p_up = float(poisson.sf(latest - 1, expected))  # P(X >= latest)
-            p_down = float(poisson.cdf(latest, expected))  # P(X <= latest)
-            if latest >= MIN_COUNT and t.ratio >= MIN_RATIO and p_up < alpha:
-                t.status, t.p_value = "rising", p_up
-            elif expected >= MIN_COUNT and t.ratio <= 1 / MIN_RATIO and p_down < alpha:
-                t.status, t.p_value = "falling", p_down
-            else:
-                t.p_value = min(p_up, p_down)
+            p_up[j] = float(poisson.sf(latest - 1, expected))  # P(X >= latest)
+            p_down[j] = float(poisson.cdf(latest, expected))  # P(X <= latest)
+            t.p_value = float(min(p_up[j], p_down[j]))
         out.append(t)
+
+    up_ok = benjamini_hochberg(p_up, FDR)
+    down_ok = benjamini_hochberg(p_down, FDR)
+    for j, t in enumerate(out):
+        if t.status != "steady" or t.ratio is None:
+            continue
+        if up_ok[j] and t.latest >= MIN_COUNT and t.ratio >= MIN_RATIO:
+            t.status, t.p_value = "rising", float(p_up[j])
+        elif down_ok[j] and t.expected >= MIN_COUNT and t.ratio <= 1 / MIN_RATIO:
+            t.status, t.p_value = "falling", float(p_down[j])
     period_info = {
         "unit": unit,
         "starts": [e.astimezone(timezone.utc).isoformat() for e in edges[:-1]],

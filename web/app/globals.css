@@ -1,0 +1,128 @@
+/*
+ * Resonance: a signal meter for support queues.
+ * Dark slate (default) or cool paper (light). One accent, sea-glass teal, for
+ * "this is signal": the recent window on charts, focus, primary actions.
+ * Status colours are reserved: rising = critical red, falling = good green,
+ * new = warning amber; each always ships with an icon and a word.
+ */
+:root {
+  --font-ui: "Public Sans", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, Menlo, monospace;
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --r-sm: 4px;
+  --r-md: 10px;
+
+  --bg: #f2f4f6;
+  --surface: #ffffff;
+  --surface-2: #e9edf1;
+  --ink: #141a21;
+  --ink-2: #445260;
+  --ink-3: #66737f;
+  --rule: rgba(20, 26, 33, 0.12);
+  --rule-strong: rgba(20, 26, 33, 0.24);
+  --accent: #127c70;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(18, 124, 112, 0.14);
+  --bar: #b9c4ce;
+  --critical: #c8362d;
+  --warning: #a86400;
+  --good: #23824a;
+  --focus: #127c70;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11151a;
+    --surface: #181e25;
+    --surface-2: #212932;
+    --ink: #e6ecf1;
+    --ink-2: #aab6c1;
+    --ink-3: #8592a0;
+    --rule: rgba(230, 236, 241, 0.1);
+    --rule-strong: rgba(230, 236, 241, 0.22);
+    --accent: #5cc8b8;
+    --accent-ink: #0d1a18;
+    --accent-soft: rgba(92, 200, 184, 0.16);
+    --bar: #3b4652;
+    --critical: #ff6b5e;
+    --warning: #f0b14a;
+    --good: #5fd08d;
+    --focus: #5cc8b8;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #11151a;
+  --surface: #181e25;
+  --surface-2: #212932;
+  --ink: #e6ecf1;
+  --ink-2: #aab6c1;
+  --ink-3: #8592a0;
+  --rule: rgba(230, 236, 241, 0.1);
+  --rule-strong: rgba(230, 236, 241, 0.22);
+  --accent: #5cc8b8;
+  --accent-ink: #0d1a18;
+  --accent-soft: rgba(92, 200, 184, 0.16);
+  --bar: #3b4652;
+  --critical: #ff6b5e;
+  --warning: #f0b14a;
+  --good: #5fd08d;
+  --focus: #5cc8b8;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.mono {
+  font-family: var(--font-mono);
+}
+.muted {
+  color: var(--ink-3);
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

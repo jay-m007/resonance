@@ -49,6 +49,7 @@ def main(argv: list[str] | None = None) -> int:
     a.add_argument("--limit", type=int, help="only read the first N tickets")
     a.add_argument("--show", type=int, default=15, help="issues to print (default 15)")
     a.add_argument("--seed", type=int, default=0)
+    a.add_argument("--synthetic", action="store_true", help="mark the report as made from simulated data (shown as a notice in the dashboard)")
 
     s = sub.add_parser("simulate", help="make a simulated month of tickets with a known spike (for demos and testing)")
     s.add_argument("input", help="a labelled dataset, e.g. the Bitext CSV")
@@ -67,6 +68,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.cmd == "analyze":
             tickets = load_tickets(args.input, text_col=args.text_col, time_col=args.time_col, customer_col=args.customer_col, limit=args.limit)
             report = analyze(tickets, backend=args.embed, k=args.k, seed=args.seed)
+            if args.synthetic:
+                report["meta"]["synthetic"] = True
             Path(args.out).write_text(json.dumps(report, indent=1), encoding="utf-8")
             _print_report(report, args.show)
             print(f"\nReport written to {args.out}")

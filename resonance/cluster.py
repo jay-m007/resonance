@@ -12,8 +12,9 @@ Two steps:
 
 Why not plain k-means? It needs the number of topics up front, and the usual
 way to choose it (the silhouette score) kept preferring the largest k on our
-benchmark. On the Bitext benchmark this two-step approach scored NMI 0.78
-against 0.69 for k-means given the true number of intents (see evaluate.py).
+benchmark. The threshold 0.2 was chosen on the Bitext benchmark: it sorts about
+90% of tickets and, counting the unsorted ones as a topic, scores as well as
+k-means that is *told* the true number of intents (see evaluate.py and the README).
 """
 from __future__ import annotations
 
@@ -24,7 +25,7 @@ import numpy as np
 from sklearn.cluster import HDBSCAN, KMeans
 
 UNSORTED = -1
-ASSIGN_THRESHOLD = 0.3
+ASSIGN_THRESHOLD = 0.2
 DISCOVERY_SAMPLE = 8000
 
 
