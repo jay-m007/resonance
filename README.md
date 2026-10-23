@@ -125,7 +125,20 @@ What this shows: without being told how many topics exist, Resonance does slight
 A threshold of 0 to 0.1 scores best like for like; 0.2 gives that up by 0.005 for noticeably cleaner topics and an honest "unsorted" bucket for tickets that don't fit anywhere. It was chosen on this same dataset.
 
 ### Catching spikes
-TREND_RESULTS
+For each run, a month of tickets is simulated from the Bitext messages, with one randomly chosen intent made 1.5×, 2× or 3× more frequent in the final week (12 runs per setting, each with a different intent). A spike counts as **detected** if a topic flagged rising is at least 25% that intent (a spike's tickets are often split over two or three topics); any other rising topic is a **false alarm**.
+
+| Tickets per day | Spike | Detected | False alarms per month | Spike's topic ranked #1 |
+|---:|---:|---:|---:|---:|
+| 120 | 3× | 75% | 0.00 | 50% |
+| 120 | 2× | 8% | 0.00 | 8% |
+| 120 | 1.5× | 0% | 0.08 | 0% |
+| 400 | 3× | **100%** | **0.00** | 58% |
+| 400 | 2× | **83%** | 0.08 | 25% |
+| 400 | 1.5× | 25% | 0.17 | 8% |
+
+With no spike at all, at least one topic was flagged in **2–6%** of simulated months (200 months per setting, including many small topics), in line with the 5% false-discovery target.
+
+What this shows: volume decides what can be seen. At 120 tickets a day spread over 27 intents, each intent gets about 4 tickets a day, so only a tripling stands out from chance; at 400 a day, a doubling is caught 5 times out of 6. False alarms stay rare at every volume. "Ranked #1" is lower than "detected" because a big, steady issue can still out-rank a smaller rising one; the dashboard shows the loudest *rising* issue separately for that reason.
 
 ## Dashboard
 
