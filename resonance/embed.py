@@ -29,12 +29,19 @@ def tfidf_lsa(texts: list[str], dims: int = 128, seed: int = 0) -> np.ndarray:
         X = hstack([words.fit_transform(texts), 0.5 * chars.fit_transform(texts)]).tocsr()
     except ValueError:
         # Tiny inputs can leave no term above min_df: fall back to no thresholds.
-        words = TfidfVectorizer(ngram_range=(1, 2), sublinear_tf=True)
-        X = words.fit_transform(texts)
+        try:
+            X = TfidfVectorizer(ngram_range=(1, 2), sublinear_tf=True, token_pattern=r"(?u)\b\w+\b").fit_transform(texts)
+        except ValueError:
+            # Nothing left at all (every ticket was only a link, number or placeholder).
+            return np.zeros((len(texts), 1))
     k = max(2, min(dims, X.shape[1] - 1, X.shape[0] - 1))
     if k < 2:
         return normalize(X.toarray())
-    Z = TruncatedSVD(n_components=k, random_state=seed).fit_transform(X)
+    import warnings
+
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", RuntimeWarning)  # degenerate tiny inputs; result is still usable
+        Z = TruncatedSVD(n_components=k, random_state=seed).fit_transform(X)
     return normalize(Z)
 
 

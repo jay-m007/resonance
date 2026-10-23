@@ -2,16 +2,16 @@
  "meta": {
   "tool": "resonance",
   "version": "0.1.0",
-  "generated_at": "2026-10-22T19:07:10.378747+00:00",
-  "duration_s": 10.11,
+  "generated_at": "2026-10-23T05:20:16.636715+00:00",
+  "duration_s": 4.6,
   "embedding": "tfidf",
   "clustering": "hdbscan(min_size=12)+assign(0.2)",
   "synthetic": true
  },
  "summary": {
   "tickets": 3719,
-  "issues": 45,
-  "unsorted": 169,
+  "issues": 49,
+  "unsorted": 155,
   "rising": 1,
   "first": "2026-09-01T00:05:09+00:00",
   "last": "2026-09-28T23:59:31+00:00",
@@ -93,15 +93,15 @@
     "payments",
     "notify"
    ],
-   "tickets": 373,
-   "share": 0.1003,
+   "tickets": 372,
+   "share": 0.1,
    "customers": 304,
    "types": {
     "bug": 136,
     "complaint": 0,
     "request": 2,
     "how-to": 100,
-    "other": 135
+    "other": 134
    },
    "severity": 0.0,
    "trend": {
@@ -121,7 +121,7 @@
      13,
      7,
      7,
-     9,
+     8,
      14,
      8,
      7,
@@ -137,11 +137,11 @@
      21
     ],
     "latest": 167,
-    "expected": 65.32,
-    "ratio": 2.56,
-    "p_value": 6.001671826490822e-26
+    "expected": 66.49,
+    "ratio": 2.51,
+    "p_value": 8.4324596210649e-18
    },
-   "cohesion": 0.449,
+   "cohesion": 0.448,
    "examples": [
     {
      "id": "sim-3579",
@@ -160,12 +160,12 @@
      "text": "help me notifying of problems with online payments"
     },
     {
-     "id": "sim-563",
-     "text": "help to notify of errors with online payments"
-    },
-    {
      "id": "sim-2933",
      "text": "help to report an issue with online payment"
+    },
+    {
+     "id": "sim-2921",
+     "text": "how can i report problems with online payments"
     }
    ],
    "ticket_ids": [
@@ -313,7 +313,6 @@
     "sim-1787",
     "sim-1696",
     "sim-1775",
-    "sim-1860",
     "sim-1812",
     "sim-1897",
     "sim-1920",
@@ -543,433 +542,299 @@
     "sim-3623",
     "sim-3705"
    ],
-   "impact": 850.4,
+   "impact": 838.9,
    "type": "bug",
    "label": {
     "majority": "payment_issue",
-    "purity": 0.622
+    "purity": 0.624
    },
    "rank": 1
   },
   {
-   "id": 16,
-   "name": "Ask \u00b7 money",
+   "id": 25,
+   "name": "Money \u00b7 rebate",
    "keywords": [
-    "ask",
     "money",
     "rebate",
-    "refund",
-    "reimbursement",
-    "status"
+    "status",
+    "compensation",
+    "current",
+    "obtain"
    ],
-   "tickets": 306,
-   "share": 0.0823,
-   "customers": 266,
+   "tickets": 173,
+   "share": 0.0465,
+   "customers": 155,
    "types": {
     "bug": 2,
     "complaint": 0,
-    "request": 6,
-    "how-to": 192,
-    "other": 106
+    "request": 4,
+    "how-to": 94,
+    "other": 73
    },
    "severity": 0.0,
    "trend": {
     "status": "steady",
     "series": [
-     14,
-     13,
-     12,
-     8,
-     12,
-     13,
-     5,
-     7,
-     12,
-     16,
-     7,
-     9,
-     15,
+     4,
      6,
+     5,
+     6,
+     8,
+     6,
+     5,
+     4,
      9,
      12,
-     17,
+     6,
+     5,
      9,
-     11,
-     9,
-     12,
+     6,
+     5,
      6,
      10,
-     16,
-     8,
-     11,
-     11,
-     16
+     4,
+     3,
+     4,
+     7,
+     5,
+     4,
+     10,
+     5,
+     7,
+     4,
+     8
     ],
-    "latest": 78,
-    "expected": 72.29,
-    "ratio": 1.08,
-    "p_value": 0.2660814703838585
+    "latest": 43,
+    "expected": 42.16,
+    "ratio": 1.02,
+    "p_value": 0.4846384404002836
    },
-   "cohesion": 0.369,
+   "cohesion": 0.434,
    "examples": [
     {
-     "id": "sim-68",
-     "text": "need to check in what cases can i ask for a reimbursement"
+     "id": "sim-2849",
+     "text": "where can I check the current status of my rebate?"
     },
     {
-     "id": "sim-3181",
-     "text": "could I see in what cases can I ask for a refund?"
+     "id": "sim-2280",
+     "text": "where to see the status of my rebate"
     },
     {
-     "id": "sim-3644",
-     "text": "see the status of the reimbursement"
+     "id": "sim-3126",
+     "text": "how to check the fucking rebate current status?"
     },
     {
-     "id": "sim-3113",
-     "text": "show me in which cases can I ask for my money back"
+     "id": "sim-610",
+     "text": "can I see the current status of the compensation?"
     },
     {
-     "id": "sim-1400",
-     "text": "in which situationscan i ask to be refunded"
+     "id": "sim-2187",
+     "text": "I need assistance to check the current status of the rebate"
     },
     {
-     "id": "sim-3107",
-     "text": "can you help me ask for a rebate of money?"
+     "id": "sim-2448",
+     "text": "help to check the compensation current status"
     }
    ],
    "ticket_ids": [
-    "sim-68",
-    "sim-129",
-    "sim-139",
     "sim-110",
     "sim-34",
     "sim-16",
-    "sim-120",
-    "sim-5",
-    "sim-52",
-    "sim-123",
-    "sim-128",
     "sim-8",
-    "sim-102",
-    "sim-142",
-    "sim-164",
     "sim-248",
     "sim-236",
-    "sim-234",
-    "sim-170",
     "sim-155",
-    "sim-177",
-    "sim-191",
-    "sim-246",
-    "sim-189",
     "sim-197",
     "sim-147",
     "sim-223",
-    "sim-281",
-    "sim-331",
-    "sim-292",
-    "sim-266",
-    "sim-332",
     "sim-341",
-    "sim-361",
+    "sim-345",
     "sim-324",
-    "sim-342",
     "sim-265",
     "sim-328",
-    "sim-269",
-    "sim-436",
     "sim-450",
-    "sim-435",
+    "sim-510",
     "sim-530",
     "sim-488",
     "sim-444",
-    "sim-426",
-    "sim-474",
+    "sim-466",
     "sim-577",
     "sim-630",
-    "sim-650",
+    "sim-544",
     "sim-665",
-    "sim-551",
     "sim-582",
-    "sim-647",
     "sim-610",
-    "sim-654",
-    "sim-549",
     "sim-567",
     "sim-607",
-    "sim-727",
-    "sim-785",
-    "sim-720",
-    "sim-714",
-    "sim-674",
-    "sim-782",
+    "sim-710",
     "sim-701",
     "sim-702",
     "sim-691",
     "sim-758",
-    "sim-760",
-    "sim-676",
     "sim-763",
     "sim-803",
     "sim-853",
     "sim-836",
     "sim-811",
-    "sim-864",
-    "sim-958",
+    "sim-880",
     "sim-1009",
-    "sim-1025",
     "sim-1027",
-    "sim-943",
+    "sim-1013",
     "sim-1032",
-    "sim-950",
     "sim-1167",
-    "sim-1053",
     "sim-1108",
     "sim-1156",
-    "sim-1119",
     "sim-1100",
     "sim-1132",
     "sim-1109",
     "sim-1077",
     "sim-1116",
     "sim-1145",
-    "sim-1140",
-    "sim-1197",
     "sim-1260",
-    "sim-1287",
+    "sim-1188",
     "sim-1283",
     "sim-1316",
-    "sim-1238",
     "sim-1324",
-    "sim-1266",
+    "sim-1315",
     "sim-1308",
     "sim-1282",
     "sim-1232",
-    "sim-1291",
-    "sim-1220",
     "sim-1245",
     "sim-1252",
     "sim-1286",
     "sim-1385",
-    "sim-1437",
+    "sim-1447",
     "sim-1328",
-    "sim-1424",
+    "sim-1406",
     "sim-1429",
-    "sim-1400",
     "sim-1373",
     "sim-1503",
-    "sim-1569",
-    "sim-1561",
     "sim-1475",
-    "sim-1491",
     "sim-1549",
     "sim-1487",
     "sim-1532",
-    "sim-1477",
-    "sim-1656",
     "sim-1575",
     "sim-1631",
-    "sim-1682",
-    "sim-1668",
     "sim-1607",
     "sim-1587",
     "sim-1644",
     "sim-1573",
-    "sim-1619",
-    "sim-1667",
     "sim-1680",
-    "sim-1630",
     "sim-1669",
-    "sim-1602",
-    "sim-1734",
+    "sim-1675",
     "sim-1755",
     "sim-1756",
     "sim-1807",
-    "sim-1782",
-    "sim-1770",
+    "sim-1719",
+    "sim-1711",
+    "sim-1722",
     "sim-1871",
-    "sim-1833",
     "sim-1899",
-    "sim-1882",
-    "sim-1843",
+    "sim-1895",
     "sim-1902",
-    "sim-1862",
-    "sim-1834",
     "sim-1925",
-    "sim-2003",
+    "sim-2030",
     "sim-2041",
     "sim-1989",
-    "sim-1985",
-    "sim-1938",
-    "sim-2060",
     "sim-1968",
-    "sim-1996",
-    "sim-2031",
-    "sim-2074",
-    "sim-1990",
-    "sim-1986",
+    "sim-2019",
+    "sim-2049",
     "sim-2189",
-    "sim-2207",
     "sim-2211",
     "sim-2137",
-    "sim-2193",
     "sim-2213",
     "sim-2187",
-    "sim-2131",
-    "sim-2172",
+    "sim-2133",
     "sim-2167",
-    "sim-2182",
-    "sim-2128",
-    "sim-2102",
     "sim-2197",
-    "sim-2147",
     "sim-2159",
     "sim-2134",
-    "sim-2228",
-    "sim-2292",
+    "sim-2241",
     "sim-2246",
-    "sim-2224",
     "sim-2280",
-    "sim-2342",
-    "sim-2263",
     "sim-2311",
-    "sim-2265",
-    "sim-2430",
     "sim-2372",
     "sim-2448",
-    "sim-2482",
-    "sim-2382",
-    "sim-2422",
-    "sim-2357",
-    "sim-2469",
-    "sim-2420",
-    "sim-2439",
     "sim-2393",
     "sim-2500",
-    "sim-2508",
-    "sim-2544",
-    "sim-2585",
     "sim-2605",
-    "sim-2510",
     "sim-2521",
-    "sim-2497",
     "sim-2546",
     "sim-2715",
-    "sim-2703",
-    "sim-2756",
-    "sim-2661",
     "sim-2657",
     "sim-2645",
-    "sim-2673",
     "sim-2722",
     "sim-2677",
-    "sim-2628",
     "sim-2745",
     "sim-2726",
+    "sim-2789",
     "sim-2783",
-    "sim-2787",
-    "sim-2889",
+    "sim-2815",
     "sim-2849",
-    "sim-2763",
     "sim-2757",
-    "sim-2958",
     "sim-2930",
-    "sim-2995",
-    "sim-2926",
-    "sim-3042",
     "sim-3012",
-    "sim-3030",
-    "sim-3027",
-    "sim-3003",
+    "sim-3041",
     "sim-2944",
-    "sim-3113",
-    "sim-3181",
     "sim-3178",
     "sim-3138",
     "sim-3079",
-    "sim-3093",
-    "sim-3188",
     "sim-3099",
     "sim-3107",
     "sim-3126",
-    "sim-3061",
     "sim-3121",
     "sim-3155",
     "sim-3062",
-    "sim-3087",
     "sim-3194",
-    "sim-3347",
     "sim-3267",
-    "sim-3261",
-    "sim-3287",
-    "sim-3234",
     "sim-3236",
     "sim-3311",
     "sim-3227",
+    "sim-3285",
+    "sim-3371",
     "sim-3378",
-    "sim-3391",
     "sim-3459",
     "sim-3444",
-    "sim-3390",
     "sim-3453",
     "sim-3463",
-    "sim-3415",
     "sim-3350",
-    "sim-3464",
-    "sim-3441",
     "sim-3515",
     "sim-3560",
-    "sim-3512",
     "sim-3497",
     "sim-3531",
-    "sim-3522",
-    "sim-3517",
-    "sim-3532",
-    "sim-3590",
-    "sim-3545",
-    "sim-3550",
     "sim-3714",
     "sim-3663",
     "sim-3706",
-    "sim-3643",
-    "sim-3668",
     "sim-3654",
-    "sim-3683",
     "sim-3629",
-    "sim-3630",
     "sim-3689",
-    "sim-3670",
-    "sim-3644",
-    "sim-3664",
     "sim-3615",
-    "sim-3694",
-    "sim-3606"
+    "sim-3694"
    ],
-   "impact": 306.0,
+   "impact": 173.0,
    "type": "how-to",
    "label": {
     "majority": "get_refund",
-    "purity": 0.415
+    "purity": 0.526
    },
    "rank": 2
   },
   {
-   "id": 40,
+   "id": 42,
    "name": "Purchase \u00b7 cancel",
    "keywords": [
     "purchase",
-    "cancel",
-    "status"
+    "cancel"
    ],
-   "tickets": 142,
-   "share": 0.0382,
-   "customers": 132,
+   "tickets": 138,
+   "share": 0.0371,
+   "customers": 129,
    "types": {
     "bug": 9,
     "complaint": 0,
-    "request": 54,
-    "how-to": 41,
-    "other": 38
+    "request": 53,
+    "how-to": 39,
+    "other": 37
    },
    "severity": 0.0,
    "trend": {
@@ -978,17 +843,17 @@
      4,
      5,
      4,
-     10,
-     6,
+     8,
+     7,
      0,
      2,
      6,
      5,
-     9,
+     8,
      6,
      7,
      7,
-     5,
+     4,
      5,
      8,
      0,
@@ -996,7 +861,7 @@
      8,
      9,
      5,
-     6,
+     5,
      6,
      1,
      3,
@@ -1004,12 +869,12 @@
      2,
      5
     ],
-    "latest": 26,
-    "expected": 36.78,
-    "ratio": 0.71,
-    "p_value": 0.03954776904845376
+    "latest": 25,
+    "expected": 36.65,
+    "ratio": 0.68,
+    "p_value": 0.04689227626136911
    },
-   "cohesion": 0.608,
+   "cohesion": 0.621,
    "examples": [
     {
      "id": "sim-1204",
@@ -1024,16 +889,16 @@
      "text": "I want to cancel purchase [order number]"
     },
     {
-     "id": "sim-939",
+     "id": "sim-1231",
      "text": "what do I need to do to cancel purchase [order number]?"
+    },
+    {
+     "id": "sim-305",
+     "text": "i want help to cancel purchase [order number]"
     },
     {
      "id": "sim-2720",
      "text": "i dont knwo how i can cancel purchase [order number]"
-    },
-    {
-     "id": "sim-2744",
-     "text": "I cannot afford this order, cancel purchase [order number]"
     }
    ],
    "ticket_ids": [
@@ -1054,12 +919,11 @@
     "sim-460",
     "sim-528",
     "sim-527",
-    "sim-430",
     "sim-395",
     "sim-459",
-    "sim-466",
     "sim-414",
     "sim-526",
+    "sim-578",
     "sim-570",
     "sim-628",
     "sim-621",
@@ -1083,7 +947,6 @@
     "sim-1219",
     "sim-1206",
     "sim-1189",
-    "sim-1315",
     "sim-1231",
     "sim-1185",
     "sim-1204",
@@ -1111,7 +974,6 @@
     "sim-1791",
     "sim-1784",
     "sim-1715",
-    "sim-1722",
     "sim-1740",
     "sim-1912",
     "sim-1913",
@@ -1157,7 +1019,6 @@
     "sim-2790",
     "sim-2779",
     "sim-2834",
-    "sim-2788",
     "sim-2819",
     "sim-2953",
     "sim-2914",
@@ -1180,481 +1041,16 @@
     "sim-3650",
     "sim-3631"
    ],
-   "impact": 142.0,
+   "impact": 138.0,
    "type": "request",
    "label": {
     "majority": "cancel_order",
-    "purity": 0.465
+    "purity": 0.471
    },
    "rank": 3
   },
   {
-   "id": 25,
-   "name": "Shipping \u00b7 address",
-   "keywords": [
-    "shipping",
-    "address",
-    "secondary",
-    "set",
-    "setting",
-    "update"
-   ],
-   "tickets": 139,
-   "share": 0.0374,
-   "customers": 123,
-   "types": {
-    "bug": 15,
-    "complaint": 0,
-    "request": 15,
-    "how-to": 50,
-    "other": 59
-   },
-   "severity": 0.0,
-   "trend": {
-    "status": "steady",
-    "series": [
-     3,
-     6,
-     3,
-     5,
-     5,
-     5,
-     4,
-     3,
-     5,
-     4,
-     7,
-     2,
-     3,
-     6,
-     6,
-     11,
-     4,
-     5,
-     3,
-     4,
-     7,
-     4,
-     5,
-     7,
-     6,
-     4,
-     5,
-     7
-    ],
-    "latest": 38,
-    "expected": 32.02,
-    "ratio": 1.19,
-    "p_value": 0.16588042801098446
-   },
-   "cohesion": 0.656,
-   "examples": [
-    {
-     "id": "sim-722",
-     "text": "what do i have to do to enter the shipping address"
-    },
-    {
-     "id": "sim-2237",
-     "text": "troubles setting up another shipping address"
-    },
-    {
-     "id": "sim-1838",
-     "text": "tell me about a shipping address modification"
-    },
-    {
-     "id": "sim-3241",
-     "text": "where do I set up the shipping address?"
-    },
-    {
-     "id": "sim-464",
-     "text": "error setting up a shipping address"
-    },
-    {
-     "id": "sim-580",
-     "text": "I do not know how I can enter another shipping address"
-    }
-   ],
-   "ticket_ids": [
-    "sim-42",
-    "sim-40",
-    "sim-1",
-    "sim-228",
-    "sim-186",
-    "sim-171",
-    "sim-226",
-    "sim-238",
-    "sim-154",
-    "sim-359",
-    "sim-347",
-    "sim-354",
-    "sim-445",
-    "sim-473",
-    "sim-409",
-    "sim-464",
-    "sim-509",
-    "sim-605",
-    "sim-580",
-    "sim-649",
-    "sim-612",
-    "sim-592",
-    "sim-703",
-    "sim-771",
-    "sim-784",
-    "sim-712",
-    "sim-722",
-    "sim-901",
-    "sim-883",
-    "sim-904",
-    "sim-817",
-    "sim-978",
-    "sim-957",
-    "sim-1020",
-    "sim-1078",
-    "sim-1134",
-    "sim-1088",
-    "sim-1158",
-    "sim-1105",
-    "sim-1227",
-    "sim-1326",
-    "sim-1302",
-    "sim-1301",
-    "sim-1433",
-    "sim-1449",
-    "sim-1329",
-    "sim-1374",
-    "sim-1378",
-    "sim-1438",
-    "sim-1404",
-    "sim-1507",
-    "sim-1476",
-    "sim-1620",
-    "sim-1674",
-    "sim-1647",
-    "sim-1750",
-    "sim-1800",
-    "sim-1772",
-    "sim-1799",
-    "sim-1721",
-    "sim-1707",
-    "sim-1856",
-    "sim-1814",
-    "sim-1853",
-    "sim-1927",
-    "sim-1836",
-    "sim-1838",
-    "sim-2044",
-    "sim-2002",
-    "sim-2038",
-    "sim-2016",
-    "sim-1945",
-    "sim-2037",
-    "sim-2079",
-    "sim-2047",
-    "sim-2039",
-    "sim-2068",
-    "sim-1979",
-    "sim-2139",
-    "sim-2173",
-    "sim-2119",
-    "sim-2171",
-    "sim-2349",
-    "sim-2297",
-    "sim-2341",
-    "sim-2237",
-    "sim-2262",
-    "sim-2397",
-    "sim-2418",
-    "sim-2431",
-    "sim-2529",
-    "sim-2598",
-    "sim-2584",
-    "sim-2539",
-    "sim-2702",
-    "sim-2680",
-    "sim-2609",
-    "sim-2690",
-    "sim-2670",
-    "sim-2737",
-    "sim-2729",
-    "sim-2832",
-    "sim-2880",
-    "sim-2848",
-    "sim-2825",
-    "sim-3038",
-    "sim-2937",
-    "sim-3005",
-    "sim-3008",
-    "sim-2922",
-    "sim-3175",
-    "sim-3074",
-    "sim-3073",
-    "sim-3199",
-    "sim-3066",
-    "sim-3096",
-    "sim-3143",
-    "sim-3275",
-    "sim-3325",
-    "sim-3323",
-    "sim-3293",
-    "sim-3241",
-    "sim-3331",
-    "sim-3468",
-    "sim-3403",
-    "sim-3457",
-    "sim-3469",
-    "sim-3582",
-    "sim-3535",
-    "sim-3520",
-    "sim-3484",
-    "sim-3495",
-    "sim-3700",
-    "sim-3616",
-    "sim-3641",
-    "sim-3688",
-    "sim-3627",
-    "sim-3648",
-    "sim-3634"
-   ],
-   "impact": 139.0,
-   "type": "how-to",
-   "label": {
-    "majority": "set_up_shipping_address",
-    "purity": 0.504
-   },
-   "rank": 4
-  },
-  {
-   "id": 37,
-   "name": "Order \u00b7 status",
-   "keywords": [
-    "order",
-    "status"
-   ],
-   "tickets": 138,
-   "share": 0.0371,
-   "customers": 131,
-   "types": {
-    "bug": 7,
-    "complaint": 0,
-    "request": 24,
-    "how-to": 50,
-    "other": 57
-   },
-   "severity": 0.0,
-   "trend": {
-    "status": "steady",
-    "series": [
-     8,
-     5,
-     3,
-     4,
-     6,
-     9,
-     5,
-     4,
-     3,
-     3,
-     7,
-     5,
-     2,
-     5,
-     8,
-     6,
-     4,
-     3,
-     8,
-     3,
-     8,
-     4,
-     3,
-     5,
-     4,
-     3,
-     9,
-     1
-    ],
-    "latest": 29,
-    "expected": 34.56,
-    "ratio": 0.84,
-    "p_value": 0.19653146550681236
-   },
-   "cohesion": 0.582,
-   "examples": [
-    {
-     "id": "sim-67",
-     "text": "lcate order [order number]"
-    },
-    {
-     "id": "sim-1365",
-     "text": "I cannot afford order [order number]"
-    },
-    {
-     "id": "sim-374",
-     "text": "I can no longer pay for order [order number]"
-    },
-    {
-     "id": "sim-1777",
-     "text": "how can i swap something of  order [order number]"
-    },
-    {
-     "id": "sim-12",
-     "text": "how to track order [order number]?"
-    },
-    {
-     "id": "sim-2938",
-     "text": "locate order [order number]"
-    }
-   ],
-   "ticket_ids": [
-    "sim-104",
-    "sim-39",
-    "sim-50",
-    "sim-26",
-    "sim-60",
-    "sim-97",
-    "sim-67",
-    "sim-12",
-    "sim-235",
-    "sim-193",
-    "sim-204",
-    "sim-221",
-    "sim-263",
-    "sim-317",
-    "sim-374",
-    "sim-301",
-    "sim-410",
-    "sim-448",
-    "sim-508",
-    "sim-454",
-    "sim-609",
-    "sim-590",
-    "sim-588",
-    "sim-625",
-    "sim-538",
-    "sim-589",
-    "sim-795",
-    "sim-686",
-    "sim-748",
-    "sim-736",
-    "sim-741",
-    "sim-766",
-    "sim-696",
-    "sim-786",
-    "sim-768",
-    "sim-892",
-    "sim-843",
-    "sim-908",
-    "sim-818",
-    "sim-876",
-    "sim-1004",
-    "sim-993",
-    "sim-955",
-    "sim-949",
-    "sim-1094",
-    "sim-1121",
-    "sim-1079",
-    "sim-1184",
-    "sim-1261",
-    "sim-1303",
-    "sim-1383",
-    "sim-1343",
-    "sim-1417",
-    "sim-1447",
-    "sim-1365",
-    "sim-1330",
-    "sim-1336",
-    "sim-1513",
-    "sim-1540",
-    "sim-1518",
-    "sim-1490",
-    "sim-1533",
-    "sim-1655",
-    "sim-1603",
-    "sim-1719",
-    "sim-1730",
-    "sim-1774",
-    "sim-1777",
-    "sim-1783",
-    "sim-1859",
-    "sim-1813",
-    "sim-1932",
-    "sim-1858",
-    "sim-1826",
-    "sim-1832",
-    "sim-1928",
-    "sim-1829",
-    "sim-2026",
-    "sim-2028",
-    "sim-2019",
-    "sim-2080",
-    "sim-1955",
-    "sim-2049",
-    "sim-2148",
-    "sim-2163",
-    "sim-2160",
-    "sim-2162",
-    "sim-2241",
-    "sim-2227",
-    "sim-2285",
-    "sim-2426",
-    "sim-2412",
-    "sim-2361",
-    "sim-2401",
-    "sim-2391",
-    "sim-2445",
-    "sim-2444",
-    "sim-2367",
-    "sim-2586",
-    "sim-2566",
-    "sim-2501",
-    "sim-2663",
-    "sim-2711",
-    "sim-2684",
-    "sim-2655",
-    "sim-2633",
-    "sim-2749",
-    "sim-2716",
-    "sim-2647",
-    "sim-2815",
-    "sim-2845",
-    "sim-2822",
-    "sim-2784",
-    "sim-3017",
-    "sim-2929",
-    "sim-2938",
-    "sim-3152",
-    "sim-3142",
-    "sim-3154",
-    "sim-3078",
-    "sim-3108",
-    "sim-3238",
-    "sim-3348",
-    "sim-3223",
-    "sim-3233",
-    "sim-3371",
-    "sim-3443",
-    "sim-3397",
-    "sim-3568",
-    "sim-3499",
-    "sim-3502",
-    "sim-3546",
-    "sim-3505",
-    "sim-3591",
-    "sim-3552",
-    "sim-3578",
-    "sim-3553",
-    "sim-3719"
-   ],
-   "impact": 138.0,
-   "type": "how-to",
-   "label": {
-    "majority": "change_order",
-    "purity": 0.442
-   },
-   "rank": 5
-  },
-  {
-   "id": 24,
+   "id": 29,
    "name": "Delivery \u00b7 address",
    "keywords": [
     "delivery",
@@ -1663,15 +1059,15 @@
     "modify",
     "new"
    ],
-   "tickets": 134,
-   "share": 0.036,
-   "customers": 120,
+   "tickets": 137,
+   "share": 0.0368,
+   "customers": 123,
    "types": {
     "bug": 13,
     "complaint": 0,
-    "request": 7,
+    "request": 8,
     "how-to": 44,
-    "other": 70
+    "other": 72
    },
    "severity": 0.0,
    "trend": {
@@ -1689,14 +1085,14 @@
      3,
      2,
      2,
-     4,
      5,
-     6,
+     5,
+     7,
      5,
      4,
      5,
      2,
-     7,
+     8,
      6,
      6,
      5,
@@ -1707,11 +1103,11 @@
      0
     ],
     "latest": 27,
-    "expected": 33.93,
-    "ratio": 0.8,
-    "p_value": 0.1331630556830023
+    "expected": 35.68,
+    "ratio": 0.76,
+    "p_value": 0.11294716199238333
    },
-   "cohesion": 0.647,
+   "cohesion": 0.64,
    "examples": [
     {
      "id": "sim-2964",
@@ -1806,6 +1202,7 @@
     "sim-1611",
     "sim-1583",
     "sim-1648",
+    "sim-1620",
     "sim-1803",
     "sim-1767",
     "sim-1792",
@@ -1816,6 +1213,7 @@
     "sim-1837",
     "sim-1891",
     "sim-1841",
+    "sim-1836",
     "sim-1868",
     "sim-1976",
     "sim-2057",
@@ -1837,6 +1235,7 @@
     "sim-2570",
     "sim-2556",
     "sim-2499",
+    "sim-2584",
     "sim-2520",
     "sim-2504",
     "sim-2555",
@@ -1874,13 +1273,245 @@
     "sim-3414",
     "sim-3493"
    ],
-   "impact": 134.0,
+   "impact": 137.0,
    "type": "how-to",
    "label": {
     "majority": "set_up_shipping_address",
-    "purity": 0.425
+    "purity": 0.416
    },
-   "rank": 6
+   "rank": 4
+  },
+  {
+   "id": 30,
+   "name": "Shipping \u00b7 address",
+   "keywords": [
+    "shipping",
+    "address",
+    "secondary",
+    "set",
+    "setting",
+    "update"
+   ],
+   "tickets": 136,
+   "share": 0.0366,
+   "customers": 121,
+   "types": {
+    "bug": 15,
+    "complaint": 0,
+    "request": 14,
+    "how-to": 50,
+    "other": 57
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     3,
+     6,
+     3,
+     5,
+     5,
+     5,
+     4,
+     3,
+     5,
+     4,
+     7,
+     2,
+     2,
+     6,
+     5,
+     11,
+     4,
+     5,
+     3,
+     3,
+     7,
+     4,
+     5,
+     7,
+     6,
+     4,
+     5,
+     7
+    ],
+    "latest": 38,
+    "expected": 31.78,
+    "ratio": 1.2,
+    "p_value": 0.20004879335880382
+   },
+   "cohesion": 0.663,
+   "examples": [
+    {
+     "id": "sim-722",
+     "text": "what do i have to do to enter the shipping address"
+    },
+    {
+     "id": "sim-2237",
+     "text": "troubles setting up another shipping address"
+    },
+    {
+     "id": "sim-1838",
+     "text": "tell me about a shipping address modification"
+    },
+    {
+     "id": "sim-3241",
+     "text": "where do I set up the shipping address?"
+    },
+    {
+     "id": "sim-464",
+     "text": "error setting up a shipping address"
+    },
+    {
+     "id": "sim-580",
+     "text": "I do not know how I can enter another shipping address"
+    }
+   ],
+   "ticket_ids": [
+    "sim-42",
+    "sim-40",
+    "sim-1",
+    "sim-228",
+    "sim-186",
+    "sim-171",
+    "sim-226",
+    "sim-238",
+    "sim-154",
+    "sim-359",
+    "sim-347",
+    "sim-354",
+    "sim-445",
+    "sim-473",
+    "sim-409",
+    "sim-464",
+    "sim-509",
+    "sim-605",
+    "sim-580",
+    "sim-649",
+    "sim-612",
+    "sim-592",
+    "sim-703",
+    "sim-771",
+    "sim-784",
+    "sim-712",
+    "sim-722",
+    "sim-901",
+    "sim-883",
+    "sim-904",
+    "sim-817",
+    "sim-978",
+    "sim-957",
+    "sim-1020",
+    "sim-1078",
+    "sim-1134",
+    "sim-1088",
+    "sim-1158",
+    "sim-1105",
+    "sim-1227",
+    "sim-1326",
+    "sim-1302",
+    "sim-1301",
+    "sim-1433",
+    "sim-1449",
+    "sim-1329",
+    "sim-1374",
+    "sim-1378",
+    "sim-1438",
+    "sim-1404",
+    "sim-1507",
+    "sim-1476",
+    "sim-1674",
+    "sim-1647",
+    "sim-1750",
+    "sim-1800",
+    "sim-1772",
+    "sim-1799",
+    "sim-1721",
+    "sim-1707",
+    "sim-1856",
+    "sim-1814",
+    "sim-1853",
+    "sim-1927",
+    "sim-1838",
+    "sim-2044",
+    "sim-2002",
+    "sim-2038",
+    "sim-2016",
+    "sim-1945",
+    "sim-2037",
+    "sim-2079",
+    "sim-2047",
+    "sim-2039",
+    "sim-2068",
+    "sim-1979",
+    "sim-2139",
+    "sim-2173",
+    "sim-2119",
+    "sim-2171",
+    "sim-2349",
+    "sim-2297",
+    "sim-2341",
+    "sim-2237",
+    "sim-2262",
+    "sim-2397",
+    "sim-2418",
+    "sim-2431",
+    "sim-2529",
+    "sim-2598",
+    "sim-2539",
+    "sim-2702",
+    "sim-2680",
+    "sim-2609",
+    "sim-2690",
+    "sim-2670",
+    "sim-2737",
+    "sim-2729",
+    "sim-2832",
+    "sim-2880",
+    "sim-2848",
+    "sim-2825",
+    "sim-3038",
+    "sim-2937",
+    "sim-3005",
+    "sim-3008",
+    "sim-2922",
+    "sim-3175",
+    "sim-3074",
+    "sim-3073",
+    "sim-3199",
+    "sim-3066",
+    "sim-3096",
+    "sim-3143",
+    "sim-3275",
+    "sim-3325",
+    "sim-3323",
+    "sim-3293",
+    "sim-3241",
+    "sim-3331",
+    "sim-3468",
+    "sim-3403",
+    "sim-3457",
+    "sim-3469",
+    "sim-3582",
+    "sim-3535",
+    "sim-3520",
+    "sim-3484",
+    "sim-3495",
+    "sim-3700",
+    "sim-3616",
+    "sim-3641",
+    "sim-3688",
+    "sim-3627",
+    "sim-3648",
+    "sim-3634"
+   ],
+   "impact": 136.0,
+   "type": "how-to",
+   "label": {
+    "majority": "set_up_shipping_address",
+    "purity": 0.515
+   },
+   "rank": 5
   },
   {
    "id": 7,
@@ -1937,9 +1568,9 @@
      7
     ],
     "latest": 35,
-    "expected": 28.54,
-    "ratio": 1.23,
-    "p_value": 0.1333281553538144
+    "expected": 29.19,
+    "ratio": 1.2,
+    "p_value": 0.2075995362652533
    },
    "cohesion": 0.558,
    "examples": [
@@ -1964,8 +1595,8 @@
      "text": "where can I check what payment methods are accepted?"
     },
     {
-     "id": "sim-1815",
-     "text": "i have got to list the accepted payment methods how to do it"
+     "id": "sim-3662",
+     "text": "help me to list the allowed payment modalities"
     }
    ],
    "ticket_ids": [
@@ -2101,10 +1732,226 @@
     "majority": "check_payment_methods",
     "purity": 0.76
    },
+   "rank": 6
+  },
+  {
+   "id": 41,
+   "name": "Order",
+   "keywords": [
+    "order"
+   ],
+   "tickets": 125,
+   "share": 0.0336,
+   "customers": 119,
+   "types": {
+    "bug": 7,
+    "complaint": 0,
+    "request": 24,
+    "how-to": 43,
+    "other": 51
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     8,
+     5,
+     3,
+     4,
+     5,
+     7,
+     5,
+     4,
+     2,
+     3,
+     5,
+     5,
+     2,
+     4,
+     8,
+     4,
+     4,
+     2,
+     8,
+     3,
+     8,
+     3,
+     3,
+     5,
+     4,
+     1,
+     9,
+     1
+    ],
+    "latest": 26,
+    "expected": 32.11,
+    "ratio": 0.81,
+    "p_value": 0.19750678910061992
+   },
+   "cohesion": 0.594,
+   "examples": [
+    {
+     "id": "sim-67",
+     "text": "lcate order [order number]"
+    },
+    {
+     "id": "sim-1365",
+     "text": "I cannot afford order [order number]"
+    },
+    {
+     "id": "sim-686",
+     "text": "I can no longer pay for order [order number]"
+    },
+    {
+     "id": "sim-12",
+     "text": "how to track order [order number]?"
+    },
+    {
+     "id": "sim-1777",
+     "text": "how can i swap something of  order [order number]"
+    },
+    {
+     "id": "sim-2938",
+     "text": "locate order [order number]"
+    }
+   ],
+   "ticket_ids": [
+    "sim-104",
+    "sim-39",
+    "sim-50",
+    "sim-26",
+    "sim-60",
+    "sim-97",
+    "sim-67",
+    "sim-12",
+    "sim-235",
+    "sim-193",
+    "sim-204",
+    "sim-221",
+    "sim-263",
+    "sim-317",
+    "sim-374",
+    "sim-301",
+    "sim-410",
+    "sim-448",
+    "sim-508",
+    "sim-454",
+    "sim-590",
+    "sim-588",
+    "sim-625",
+    "sim-538",
+    "sim-589",
+    "sim-795",
+    "sim-686",
+    "sim-748",
+    "sim-736",
+    "sim-741",
+    "sim-766",
+    "sim-786",
+    "sim-892",
+    "sim-843",
+    "sim-908",
+    "sim-818",
+    "sim-876",
+    "sim-1004",
+    "sim-993",
+    "sim-955",
+    "sim-949",
+    "sim-1094",
+    "sim-1079",
+    "sim-1184",
+    "sim-1261",
+    "sim-1303",
+    "sim-1383",
+    "sim-1343",
+    "sim-1365",
+    "sim-1330",
+    "sim-1336",
+    "sim-1513",
+    "sim-1540",
+    "sim-1518",
+    "sim-1490",
+    "sim-1533",
+    "sim-1655",
+    "sim-1603",
+    "sim-1730",
+    "sim-1774",
+    "sim-1777",
+    "sim-1783",
+    "sim-1859",
+    "sim-1813",
+    "sim-1932",
+    "sim-1858",
+    "sim-1826",
+    "sim-1832",
+    "sim-1928",
+    "sim-1829",
+    "sim-2026",
+    "sim-2028",
+    "sim-2080",
+    "sim-1955",
+    "sim-2148",
+    "sim-2163",
+    "sim-2160",
+    "sim-2162",
+    "sim-2227",
+    "sim-2285",
+    "sim-2426",
+    "sim-2412",
+    "sim-2361",
+    "sim-2401",
+    "sim-2391",
+    "sim-2445",
+    "sim-2444",
+    "sim-2367",
+    "sim-2586",
+    "sim-2566",
+    "sim-2501",
+    "sim-2663",
+    "sim-2711",
+    "sim-2684",
+    "sim-2655",
+    "sim-2633",
+    "sim-2749",
+    "sim-2716",
+    "sim-2647",
+    "sim-2845",
+    "sim-2822",
+    "sim-2784",
+    "sim-3017",
+    "sim-2929",
+    "sim-2938",
+    "sim-3152",
+    "sim-3142",
+    "sim-3154",
+    "sim-3078",
+    "sim-3108",
+    "sim-3238",
+    "sim-3348",
+    "sim-3223",
+    "sim-3233",
+    "sim-3443",
+    "sim-3568",
+    "sim-3499",
+    "sim-3502",
+    "sim-3546",
+    "sim-3505",
+    "sim-3591",
+    "sim-3552",
+    "sim-3578",
+    "sim-3553",
+    "sim-3719"
+   ],
+   "impact": 125.0,
+   "type": "how-to",
+   "label": {
+    "majority": "change_order",
+    "purity": 0.48
+   },
    "rank": 7
   },
   {
-   "id": 26,
+   "id": 28,
    "name": "Hours \u00b7 contact",
    "keywords": [
     "hours",
@@ -2114,15 +1961,15 @@
     "reach",
     "check"
    ],
-   "tickets": 124,
-   "share": 0.0333,
-   "customers": 115,
+   "tickets": 123,
+   "share": 0.0331,
+   "customers": 114,
    "types": {
     "bug": 0,
     "complaint": 0,
     "request": 0,
     "how-to": 85,
-    "other": 39
+    "other": 38
    },
    "severity": 0.0,
    "trend": {
@@ -2145,7 +1992,7 @@
      3,
      4,
      5,
-     4,
+     3,
      6,
      3,
      7,
@@ -2158,11 +2005,11 @@
      2
     ],
     "latest": 32,
-    "expected": 29.17,
-    "ratio": 1.1,
-    "p_value": 0.3240925296040246
+    "expected": 29.51,
+    "ratio": 1.08,
+    "p_value": 0.3801763257517102
    },
-   "cohesion": 0.631,
+   "cohesion": 0.634,
    "examples": [
     {
      "id": "sim-1835",
@@ -2265,7 +2112,6 @@
     "sim-2325",
     "sim-2346",
     "sim-2310",
-    "sim-2315",
     "sim-2395",
     "sim-2396",
     "sim-2478",
@@ -2315,11 +2161,11 @@
     "sim-3679",
     "sim-3696"
    ],
-   "impact": 124.0,
+   "impact": 123.0,
    "type": "how-to",
    "label": {
     "majority": "contact_customer_service",
-    "purity": 0.927
+    "purity": 0.935
    },
    "rank": 8
   },
@@ -2378,9 +2224,9 @@
      3
     ],
     "latest": 27,
-    "expected": 27.27,
-    "ratio": 0.99,
-    "p_value": 0.5304168853443914
+    "expected": 27.89,
+    "ratio": 0.97,
+    "p_value": 0.49232886191093495
    },
    "cohesion": 0.629,
    "examples": [
@@ -2533,211 +2379,7 @@
    "rank": 9
   },
   {
-   "id": 28,
-   "name": "Account \u00b7 pro",
-   "keywords": [
-    "account",
-    "pro",
-    "close",
-    "info",
-    "details"
-   ],
-   "tickets": 109,
-   "share": 0.0293,
-   "customers": 101,
-   "types": {
-    "bug": 5,
-    "complaint": 0,
-    "request": 23,
-    "how-to": 23,
-    "other": 58
-   },
-   "severity": 0.0,
-   "trend": {
-    "status": "steady",
-    "series": [
-     8,
-     2,
-     5,
-     8,
-     6,
-     3,
-     4,
-     2,
-     1,
-     6,
-     3,
-     6,
-     2,
-     4,
-     3,
-     5,
-     1,
-     3,
-     3,
-     5,
-     5,
-     4,
-     3,
-     4,
-     7,
-     3,
-     1,
-     2
-    ],
-    "latest": 24,
-    "expected": 26.95,
-    "ratio": 0.89,
-    "p_value": 0.327496085158664
-   },
-   "cohesion": 0.542,
-   "examples": [
-    {
-     "id": "sim-3231",
-     "text": "another [account type] account"
-    },
-    {
-     "id": "sim-1737",
-     "text": "closing  [account category] account"
-    },
-    {
-     "id": "sim-99",
-     "text": "openng [account category] account"
-    },
-    {
-     "id": "sim-2980",
-     "text": "switching to [account category] account"
-    },
-    {
-     "id": "sim-891",
-     "text": "deleting [account type] account"
-    },
-    {
-     "id": "sim-3674",
-     "text": "how do i restore my account passwodr"
-    }
-   ],
-   "ticket_ids": [
-    "sim-59",
-    "sim-99",
-    "sim-127",
-    "sim-41",
-    "sim-118",
-    "sim-47",
-    "sim-92",
-    "sim-53",
-    "sim-160",
-    "sim-241",
-    "sim-334",
-    "sim-356",
-    "sim-283",
-    "sim-279",
-    "sim-285",
-    "sim-532",
-    "sim-482",
-    "sim-453",
-    "sim-438",
-    "sim-390",
-    "sim-516",
-    "sim-491",
-    "sim-461",
-    "sim-608",
-    "sim-545",
-    "sim-558",
-    "sim-624",
-    "sim-581",
-    "sim-653",
-    "sim-713",
-    "sim-793",
-    "sim-745",
-    "sim-857",
-    "sim-828",
-    "sim-891",
-    "sim-827",
-    "sim-922",
-    "sim-931",
-    "sim-1142",
-    "sim-1265",
-    "sim-1249",
-    "sim-1210",
-    "sim-1198",
-    "sim-1307",
-    "sim-1254",
-    "sim-1430",
-    "sim-1371",
-    "sim-1350",
-    "sim-1543",
-    "sim-1467",
-    "sim-1519",
-    "sim-1514",
-    "sim-1520",
-    "sim-1478",
-    "sim-1626",
-    "sim-1582",
-    "sim-1737",
-    "sim-1768",
-    "sim-1741",
-    "sim-1805",
-    "sim-1907",
-    "sim-1904",
-    "sim-1885",
-    "sim-2059",
-    "sim-1982",
-    "sim-2064",
-    "sim-2052",
-    "sim-2085",
-    "sim-2127",
-    "sim-2221",
-    "sim-2312",
-    "sim-2324",
-    "sim-2362",
-    "sim-2474",
-    "sim-2399",
-    "sim-2526",
-    "sim-2548",
-    "sim-2574",
-    "sim-2597",
-    "sim-2554",
-    "sim-2730",
-    "sim-2704",
-    "sim-2707",
-    "sim-2666",
-    "sim-2617",
-    "sim-2869",
-    "sim-2759",
-    "sim-2828",
-    "sim-2814",
-    "sim-3002",
-    "sim-2986",
-    "sim-2980",
-    "sim-3131",
-    "sim-3173",
-    "sim-3067",
-    "sim-3197",
-    "sim-3320",
-    "sim-3231",
-    "sim-3341",
-    "sim-3324",
-    "sim-3237",
-    "sim-3328",
-    "sim-3204",
-    "sim-3424",
-    "sim-3360",
-    "sim-3478",
-    "sim-3498",
-    "sim-3598",
-    "sim-3674"
-   ],
-   "impact": 109.0,
-   "type": "request",
-   "label": {
-    "majority": "edit_account",
-    "purity": 0.358
-   },
-   "rank": 10
-  },
-  {
-   "id": 35,
+   "id": 39,
    "name": "Feedback \u00b7 send",
    "keywords": [
     "feedback",
@@ -2791,9 +2433,9 @@
      5
     ],
     "latest": 30,
-    "expected": 24.73,
-    "ratio": 1.21,
-    "p_value": 0.1678005016550585
+    "expected": 25.3,
+    "ratio": 1.19,
+    "p_value": 0.24424295728165454
    },
    "cohesion": 0.617,
    "examples": [
@@ -2938,27 +2580,27 @@
     "majority": "review",
     "purity": 0.907
    },
-   "rank": 11
+   "rank": 10
   },
   {
-   "id": 38,
-   "name": "Invoice \u00b7 don",
+   "id": 44,
+   "name": "Don \u00b7 invoice",
    "keywords": [
-    "invoice",
     "don",
+    "invoice",
     "invoices",
     "download",
     "check"
    ],
    "tickets": 103,
    "share": 0.0277,
-   "customers": 96,
+   "customers": 95,
    "types": {
     "bug": 0,
     "complaint": 0,
     "request": 2,
-    "how-to": 80,
-    "other": 21
+    "how-to": 81,
+    "other": 20
    },
    "severity": 0.0,
    "trend": {
@@ -2978,9 +2620,9 @@
      3,
      6,
      5,
-     2,
+     1,
      4,
-     5,
+     6,
      6,
      5,
      5,
@@ -2994,35 +2636,35 @@
      2
     ],
     "latest": 16,
-    "expected": 27.59,
-    "ratio": 0.58,
-    "p_value": 0.012281762231177117
+    "expected": 28.22,
+    "ratio": 0.57,
+    "p_value": 0.019140355703531533
    },
-   "cohesion": 0.528,
+   "cohesion": 0.526,
    "examples": [
     {
      "id": "sim-2571",
      "text": "I don't know what to do to find my invoice from [person name]"
     },
     {
-     "id": "sim-3259",
-     "text": "I do not know what to do to get invoice #[number]"
+     "id": "sim-906",
+     "text": "I do not know how I can get my invoice from [person name]"
     },
     {
      "id": "sim-2739",
-     "text": "I don't know what I need to do to get my invoice #[number]"
+     "text": "I don't know what I need to do to get my invoice [number]"
     },
     {
      "id": "sim-2441",
-     "text": "what do I have to do to see my invoice #[number]?"
+     "text": "what do I have to do to see my invoice [number]?"
     },
     {
      "id": "sim-3119",
      "text": "getting invoice from [person name]"
     },
     {
-     "id": "sim-2098",
-     "text": "what do i need to do to see the invoice #[number]"
+     "id": "sim-1292",
+     "text": "I have to see my invoice from [person name], help me"
     }
    ],
    "ticket_ids": [
@@ -3082,7 +2724,6 @@
     "sim-1746",
     "sim-1739",
     "sim-1793",
-    "sim-1878",
     "sim-1873",
     "sim-1965",
     "sim-2035",
@@ -3090,6 +2731,7 @@
     "sim-2083",
     "sim-2143",
     "sim-2123",
+    "sim-2182",
     "sim-2098",
     "sim-2176",
     "sim-2170",
@@ -3135,6 +2777,194 @@
    "label": {
     "majority": "check_invoice",
     "purity": 0.32
+   },
+   "rank": 11
+  },
+  {
+   "id": 33,
+   "name": "Account \u00b7 close",
+   "keywords": [
+    "account",
+    "close",
+    "details",
+    "info"
+   ],
+   "tickets": 94,
+   "share": 0.0253,
+   "customers": 89,
+   "types": {
+    "bug": 5,
+    "complaint": 0,
+    "request": 20,
+    "how-to": 21,
+    "other": 48
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     6,
+     0,
+     3,
+     8,
+     5,
+     3,
+     4,
+     2,
+     1,
+     5,
+     2,
+     6,
+     2,
+     3,
+     3,
+     4,
+     1,
+     2,
+     3,
+     4,
+     4,
+     5,
+     3,
+     4,
+     5,
+     3,
+     1,
+     2
+    ],
+    "latest": 23,
+    "expected": 23.03,
+    "ratio": 1.0,
+    "p_value": 0.5415918182363554
+   },
+   "cohesion": 0.564,
+   "examples": [
+    {
+     "id": "sim-3231",
+     "text": "another [account type] account"
+    },
+    {
+     "id": "sim-491",
+     "text": "closing [account category] account"
+    },
+    {
+     "id": "sim-99",
+     "text": "openng [account category] account"
+    },
+    {
+     "id": "sim-2980",
+     "text": "switching to [account category] account"
+    },
+    {
+     "id": "sim-891",
+     "text": "deleting [account type] account"
+    },
+    {
+     "id": "sim-3674",
+     "text": "how do i restore my account passwodr"
+    }
+   ],
+   "ticket_ids": [
+    "sim-59",
+    "sim-99",
+    "sim-41",
+    "sim-118",
+    "sim-47",
+    "sim-53",
+    "sim-334",
+    "sim-356",
+    "sim-283",
+    "sim-532",
+    "sim-482",
+    "sim-453",
+    "sim-438",
+    "sim-390",
+    "sim-516",
+    "sim-491",
+    "sim-461",
+    "sim-545",
+    "sim-558",
+    "sim-624",
+    "sim-581",
+    "sim-653",
+    "sim-713",
+    "sim-793",
+    "sim-745",
+    "sim-857",
+    "sim-828",
+    "sim-891",
+    "sim-827",
+    "sim-922",
+    "sim-931",
+    "sim-1142",
+    "sim-1298",
+    "sim-1265",
+    "sim-1210",
+    "sim-1198",
+    "sim-1307",
+    "sim-1371",
+    "sim-1350",
+    "sim-1543",
+    "sim-1467",
+    "sim-1519",
+    "sim-1514",
+    "sim-1520",
+    "sim-1478",
+    "sim-1626",
+    "sim-1582",
+    "sim-1737",
+    "sim-1768",
+    "sim-1741",
+    "sim-1907",
+    "sim-1904",
+    "sim-1885",
+    "sim-2059",
+    "sim-2064",
+    "sim-2052",
+    "sim-2085",
+    "sim-2127",
+    "sim-2221",
+    "sim-2324",
+    "sim-2362",
+    "sim-2474",
+    "sim-2399",
+    "sim-2526",
+    "sim-2548",
+    "sim-2574",
+    "sim-2597",
+    "sim-2730",
+    "sim-2704",
+    "sim-2666",
+    "sim-2617",
+    "sim-2869",
+    "sim-2759",
+    "sim-2816",
+    "sim-2828",
+    "sim-2814",
+    "sim-3002",
+    "sim-2986",
+    "sim-2980",
+    "sim-3131",
+    "sim-3173",
+    "sim-3067",
+    "sim-3197",
+    "sim-3231",
+    "sim-3341",
+    "sim-3237",
+    "sim-3328",
+    "sim-3204",
+    "sim-3424",
+    "sim-3360",
+    "sim-3478",
+    "sim-3498",
+    "sim-3598",
+    "sim-3674"
+   ],
+   "impact": 94.0,
+   "type": "how-to",
+   "label": {
+    "majority": "edit_account",
+    "purity": 0.372
    },
    "rank": 12
   },
@@ -3193,11 +3023,11 @@
      2
     ],
     "latest": 21,
-    "expected": 22.2,
-    "ratio": 0.95,
-    "p_value": 0.45518626735122114
+    "expected": 22.7,
+    "ratio": 0.92,
+    "p_value": 0.4320440177091658
    },
-   "cohesion": 0.571,
+   "cohesion": 0.573,
    "examples": [
     {
      "id": "sim-769",
@@ -3326,6 +3156,186 @@
    "rank": 13
   },
   {
+   "id": 47,
+   "name": "Newsletter \u00b7 company",
+   "keywords": [
+    "newsletter",
+    "company",
+    "unsubscribe",
+    "subscribe",
+    "sign",
+    "unsubscribing"
+   ],
+   "tickets": 84,
+   "share": 0.0226,
+   "customers": 80,
+   "types": {
+    "bug": 4,
+    "complaint": 0,
+    "request": 24,
+    "how-to": 25,
+    "other": 31
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     4,
+     3,
+     4,
+     4,
+     2,
+     2,
+     2,
+     4,
+     2,
+     5,
+     1,
+     4,
+     1,
+     5,
+     1,
+     5,
+     4,
+     4,
+     6,
+     1,
+     2,
+     3,
+     1,
+     2,
+     1,
+     4,
+     3,
+     4
+    ],
+    "latest": 18,
+    "expected": 21.41,
+    "ratio": 0.84,
+    "p_value": 0.30526722648632104
+   },
+   "cohesion": 0.685,
+   "examples": [
+    {
+     "id": "sim-1511",
+     "text": "unsubscribe to company newsletter"
+    },
+    {
+     "id": "sim-3240",
+     "text": "can you help me unsubscribing to the company newsletter?"
+    },
+    {
+     "id": "sim-3562",
+     "text": "i want help to unsubscribe from the company newsletter"
+    },
+    {
+     "id": "sim-1546",
+     "text": "how do I subscribe to your company newsletter ?"
+    },
+    {
+     "id": "sim-515",
+     "text": "I want help unsubscribing from the company newsletter"
+    },
+    {
+     "id": "sim-2971",
+     "text": "i need help to unsubscribe from ur company newsletter"
+    }
+   ],
+   "ticket_ids": [
+    "sim-25",
+    "sim-96",
+    "sim-75",
+    "sim-48",
+    "sim-179",
+    "sim-183",
+    "sim-174",
+    "sim-286",
+    "sim-315",
+    "sim-364",
+    "sim-295",
+    "sim-476",
+    "sim-468",
+    "sim-441",
+    "sim-515",
+    "sim-618",
+    "sim-560",
+    "sim-742",
+    "sim-739",
+    "sim-886",
+    "sim-868",
+    "sim-929",
+    "sim-1016",
+    "sim-925",
+    "sim-972",
+    "sim-1058",
+    "sim-1075",
+    "sim-1191",
+    "sim-1224",
+    "sim-1304",
+    "sim-1240",
+    "sim-1229",
+    "sim-1432",
+    "sim-1511",
+    "sim-1546",
+    "sim-1523",
+    "sim-1506",
+    "sim-1608",
+    "sim-1776",
+    "sim-1709",
+    "sim-1761",
+    "sim-1689",
+    "sim-1727",
+    "sim-1884",
+    "sim-1998",
+    "sim-1939",
+    "sim-1995",
+    "sim-2015",
+    "sim-1961",
+    "sim-2186",
+    "sim-2118",
+    "sim-2103",
+    "sim-2097",
+    "sim-2330",
+    "sim-2322",
+    "sim-2250",
+    "sim-2231",
+    "sim-2411",
+    "sim-2475",
+    "sim-2451",
+    "sim-2450",
+    "sim-2375",
+    "sim-2472",
+    "sim-2559",
+    "sim-2622",
+    "sim-2682",
+    "sim-2803",
+    "sim-2881",
+    "sim-2817",
+    "sim-2971",
+    "sim-3095",
+    "sim-3115",
+    "sim-3240",
+    "sim-3352",
+    "sim-3473",
+    "sim-3359",
+    "sim-3477",
+    "sim-3562",
+    "sim-3483",
+    "sim-3540",
+    "sim-3645",
+    "sim-3712",
+    "sim-3657",
+    "sim-3713"
+   ],
+   "impact": 84.0,
+   "type": "how-to",
+   "label": {
+    "majority": "newsletter_subscription",
+    "purity": 0.964
+   },
+   "rank": 14
+  },
+  {
    "id": 6,
    "name": "Article \u00b7 shopping",
    "keywords": [
@@ -3334,11 +3344,11 @@
     "buying",
     "earn",
     "ordering",
-    "ur"
+    "articles"
    ],
    "tickets": 83,
    "share": 0.0223,
-   "customers": 82,
+   "customers": 81,
    "types": {
     "bug": 0,
     "complaint": 0,
@@ -3352,9 +3362,9 @@
     "series": [
      4,
      2,
+     3,
      2,
-     2,
-     1,
+     0,
      5,
      7,
      4,
@@ -3380,12 +3390,16 @@
      2
     ],
     "latest": 14,
-    "expected": 21.88,
-    "ratio": 0.64,
-    "p_value": 0.050175279512569795
+    "expected": 22.38,
+    "ratio": 0.63,
+    "p_value": 0.0643422718990884
    },
-   "cohesion": 0.605,
+   "cohesion": 0.604,
    "examples": [
+    {
+     "id": "sim-1055",
+     "text": "help swapping an article of purc[number]"
+    },
     {
      "id": "sim-383",
      "text": "order a few of your article"
@@ -3405,10 +3419,6 @@
     {
      "id": "sim-1509",
      "text": "can you help me shopping several of your article?"
-    },
-    {
-     "id": "sim-723",
-     "text": "assistance buying some of your article"
     }
    ],
    "ticket_ids": [
@@ -3418,11 +3428,11 @@
     "sim-4",
     "sim-253",
     "sim-218",
+    "sim-284",
     "sim-298",
     "sim-383",
     "sim-504",
     "sim-497",
-    "sim-544",
     "sim-700",
     "sim-783",
     "sim-698",
@@ -3500,191 +3510,12 @@
    "type": "how-to",
    "label": {
     "majority": "place_order",
-    "purity": 0.795
-   },
-   "rank": 14
-  },
-  {
-   "id": 43,
-   "name": "Newsletter \u00b7 company",
-   "keywords": [
-    "newsletter",
-    "company",
-    "unsubscribe",
-    "subscribe",
-    "sign",
-    "unsubscribing"
-   ],
-   "tickets": 83,
-   "share": 0.0223,
-   "customers": 79,
-   "types": {
-    "bug": 4,
-    "complaint": 0,
-    "request": 24,
-    "how-to": 24,
-    "other": 31
-   },
-   "severity": 0.0,
-   "trend": {
-    "status": "steady",
-    "series": [
-     4,
-     3,
-     4,
-     4,
-     1,
-     2,
-     2,
-     4,
-     2,
-     5,
-     1,
-     4,
-     1,
-     5,
-     1,
-     5,
-     4,
-     4,
-     6,
-     1,
-     2,
-     3,
-     1,
-     2,
-     1,
-     4,
-     3,
-     4
-    ],
-    "latest": 18,
-    "expected": 20.61,
-    "ratio": 0.87,
-    "p_value": 0.3316346600613463
-   },
-   "cohesion": 0.689,
-   "examples": [
-    {
-     "id": "sim-1511",
-     "text": "unsubscribe to company newsletter"
-    },
-    {
-     "id": "sim-3240",
-     "text": "can you help me unsubscribing to the company newsletter?"
-    },
-    {
-     "id": "sim-3562",
-     "text": "i want help to unsubscribe from the company newsletter"
-    },
-    {
-     "id": "sim-1546",
-     "text": "how do I subscribe to your company newsletter ?"
-    },
-    {
-     "id": "sim-515",
-     "text": "I want help unsubscribing from the company newsletter"
-    },
-    {
-     "id": "sim-2971",
-     "text": "i need help to unsubscribe from ur company newsletter"
-    }
-   ],
-   "ticket_ids": [
-    "sim-25",
-    "sim-96",
-    "sim-75",
-    "sim-48",
-    "sim-179",
-    "sim-183",
-    "sim-174",
-    "sim-286",
-    "sim-315",
-    "sim-364",
-    "sim-295",
-    "sim-476",
-    "sim-468",
-    "sim-441",
-    "sim-515",
-    "sim-560",
-    "sim-742",
-    "sim-739",
-    "sim-886",
-    "sim-868",
-    "sim-929",
-    "sim-1016",
-    "sim-925",
-    "sim-972",
-    "sim-1058",
-    "sim-1075",
-    "sim-1191",
-    "sim-1224",
-    "sim-1304",
-    "sim-1240",
-    "sim-1229",
-    "sim-1432",
-    "sim-1511",
-    "sim-1546",
-    "sim-1523",
-    "sim-1506",
-    "sim-1608",
-    "sim-1776",
-    "sim-1709",
-    "sim-1761",
-    "sim-1689",
-    "sim-1727",
-    "sim-1884",
-    "sim-1998",
-    "sim-1939",
-    "sim-1995",
-    "sim-2015",
-    "sim-1961",
-    "sim-2186",
-    "sim-2118",
-    "sim-2103",
-    "sim-2097",
-    "sim-2330",
-    "sim-2322",
-    "sim-2250",
-    "sim-2231",
-    "sim-2411",
-    "sim-2475",
-    "sim-2451",
-    "sim-2450",
-    "sim-2375",
-    "sim-2472",
-    "sim-2559",
-    "sim-2622",
-    "sim-2682",
-    "sim-2803",
-    "sim-2881",
-    "sim-2817",
-    "sim-2971",
-    "sim-3095",
-    "sim-3115",
-    "sim-3240",
-    "sim-3352",
-    "sim-3473",
-    "sim-3359",
-    "sim-3477",
-    "sim-3562",
-    "sim-3483",
-    "sim-3540",
-    "sim-3645",
-    "sim-3712",
-    "sim-3657",
-    "sim-3713"
-   ],
-   "impact": 83.0,
-   "type": "request",
-   "label": {
-    "majority": "newsletter_subscription",
-    "purity": 0.964
+    "purity": 0.807
    },
    "rank": 15
   },
   {
-   "id": 19,
+   "id": 18,
    "name": "Use \u00b7 profile",
    "keywords": [
     "use",
@@ -3694,15 +3525,15 @@
     "account",
     "using"
    ],
-   "tickets": 77,
-   "share": 0.0207,
-   "customers": 76,
+   "tickets": 75,
+   "share": 0.0202,
+   "customers": 74,
    "types": {
     "bug": 0,
     "complaint": 0,
     "request": 11,
-    "how-to": 26,
-    "other": 40
+    "how-to": 25,
+    "other": 39
    },
    "severity": 0.0,
    "trend": {
@@ -3724,9 +3555,9 @@
      3,
      3,
      0,
-     7,
+     6,
      3,
-     2,
+     1,
      0,
      7,
      2,
@@ -3738,11 +3569,11 @@
      4
     ],
     "latest": 22,
-    "expected": 17.44,
-    "ratio": 1.26,
-    "p_value": 0.16436611855365796
+    "expected": 17.19,
+    "ratio": 1.28,
+    "p_value": 0.19821512210659778
    },
-   "cohesion": 0.542,
+   "cohesion": 0.545,
    "examples": [
     {
      "id": "sim-490",
@@ -3812,11 +3643,9 @@
     "sim-2210",
     "sim-2107",
     "sim-2166",
-    "sim-2150",
     "sim-2258",
     "sim-2314",
     "sim-2272",
-    "sim-2459",
     "sim-2436",
     "sim-2642",
     "sim-2648",
@@ -3848,182 +3677,16 @@
     "sim-3691",
     "sim-3635"
    ],
-   "impact": 77.0,
+   "impact": 75.0,
    "type": "how-to",
    "label": {
     "majority": "switch_account",
-    "purity": 0.519
+    "purity": 0.52
    },
    "rank": 16
   },
   {
-   "id": 41,
-   "name": "Bills \u00b7 download",
-   "keywords": [
-    "bills",
-    "download",
-    "check"
-   ],
-   "tickets": 73,
-   "share": 0.0196,
-   "customers": 69,
-   "types": {
-    "bug": 1,
-    "complaint": 0,
-    "request": 0,
-    "how-to": 47,
-    "other": 25
-   },
-   "severity": 0.004,
-   "trend": {
-    "status": "steady",
-    "series": [
-     3,
-     2,
-     4,
-     8,
-     2,
-     3,
-     6,
-     3,
-     1,
-     4,
-     1,
-     2,
-     4,
-     1,
-     6,
-     2,
-     0,
-     3,
-     3,
-     2,
-     1,
-     4,
-     0,
-     1,
-     5,
-     1,
-     1,
-     0
-    ],
-    "latest": 12,
-    "expected": 19.34,
-    "ratio": 0.62,
-    "p_value": 0.052259906661694354
-   },
-   "cohesion": 0.589,
-   "examples": [
-    {
-     "id": "sim-418",
-     "text": "find my bill from [person name]"
-    },
-    {
-     "id": "sim-1560",
-     "text": "find my bill #[number]"
-    },
-    {
-     "id": "sim-1842",
-     "text": "can you help me find trhe bills from [person name]?"
-    },
-    {
-     "id": "sim-212",
-     "text": "see my bills from [person name]"
-    },
-    {
-     "id": "sim-1615",
-     "text": "how can I see my bill from [person name]?"
-    },
-    {
-     "id": "sim-227",
-     "text": "see bill #[number]"
-    }
-   ],
-   "ticket_ids": [
-    "sim-18",
-    "sim-65",
-    "sim-122",
-    "sim-212",
-    "sim-227",
-    "sim-325",
-    "sim-380",
-    "sim-371",
-    "sim-274",
-    "sim-502",
-    "sim-428",
-    "sim-462",
-    "sim-456",
-    "sim-449",
-    "sim-442",
-    "sim-418",
-    "sim-393",
-    "sim-660",
-    "sim-615",
-    "sim-724",
-    "sim-684",
-    "sim-778",
-    "sim-914",
-    "sim-916",
-    "sim-888",
-    "sim-869",
-    "sim-898",
-    "sim-905",
-    "sim-973",
-    "sim-1039",
-    "sim-933",
-    "sim-1137",
-    "sim-1257",
-    "sim-1268",
-    "sim-1306",
-    "sim-1194",
-    "sim-1416",
-    "sim-1560",
-    "sim-1457",
-    "sim-1615",
-    "sim-1632",
-    "sim-1580",
-    "sim-1598",
-    "sim-1743",
-    "sim-1816",
-    "sim-1900",
-    "sim-1893",
-    "sim-1921",
-    "sim-1849",
-    "sim-1842",
-    "sim-2071",
-    "sim-1987",
-    "sim-2255",
-    "sim-2253",
-    "sim-2236",
-    "sim-2388",
-    "sim-2408",
-    "sim-2366",
-    "sim-2591",
-    "sim-2552",
-    "sim-2754",
-    "sim-2768",
-    "sim-2805",
-    "sim-2808",
-    "sim-2871",
-    "sim-3081",
-    "sim-3246",
-    "sim-3242",
-    "sim-3313",
-    "sim-3305",
-    "sim-3248",
-    "sim-3418",
-    "sim-3507"
-   ],
-   "impact": 73.3,
-   "type": "how-to",
-   "label": {
-    "majority": "check_invoice",
-    "purity": 0.658
-   },
-   "rank": 17
-  },
-  {
-   "id": 34,
+   "id": 38,
    "name": "Standard \u00b7 account",
    "keywords": [
     "standard",
@@ -4077,11 +3740,11 @@
      0
     ],
     "latest": 23,
-    "expected": 15.85,
-    "ratio": 1.45,
-    "p_value": 0.053829952414740735
+    "expected": 16.22,
+    "ratio": 1.42,
+    "p_value": 0.10616980954101922
    },
-   "cohesion": 0.756,
+   "cohesion": 0.757,
    "examples": [
     {
      "id": "sim-437",
@@ -4189,10 +3852,10 @@
     "majority": "delete_account",
     "purity": 0.37
    },
-   "rank": 18
+   "rank": 17
   },
   {
-   "id": 33,
+   "id": 37,
    "name": "Leave \u00b7 comment",
    "keywords": [
     "leave",
@@ -4246,11 +3909,11 @@
      5
     ],
     "latest": 19,
-    "expected": 16.8,
-    "ratio": 1.13,
-    "p_value": 0.32740652738394116
+    "expected": 17.19,
+    "ratio": 1.11,
+    "p_value": 0.3976224941948424
    },
-   "cohesion": 0.557,
+   "cohesion": 0.556,
    "examples": [
     {
      "id": "sim-37",
@@ -4357,7 +4020,494 @@
     "majority": "review",
     "purity": 0.931
    },
+   "rank": 18
+  },
+  {
+   "id": 26,
+   "name": "Refund \u00b7 situations",
+   "keywords": [
+    "refund",
+    "situations",
+    "ask",
+    "policy",
+    "paid",
+    "obtain"
+   ],
+   "tickets": 71,
+   "share": 0.0191,
+   "customers": 69,
+   "types": {
+    "bug": 0,
+    "complaint": 0,
+    "request": 1,
+    "how-to": 44,
+    "other": 26
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     5,
+     2,
+     6,
+     2,
+     3,
+     7,
+     2,
+     1,
+     2,
+     2,
+     3,
+     2,
+     2,
+     2,
+     5,
+     2,
+     2,
+     3,
+     1,
+     2,
+     1,
+     1,
+     3,
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "latest": 14,
+    "expected": 18.49,
+    "ratio": 0.76,
+    "p_value": 0.21532341571819014
+   },
+   "cohesion": 0.598,
+   "examples": [
+    {
+     "id": "sim-760",
+     "text": "seed under which circumstances can I ask for a refund"
+    },
+    {
+     "id": "sim-120",
+     "text": "see in what situations can I ask for a refund"
+    },
+    {
+     "id": "sim-2661",
+     "text": "how can i get a refund"
+    },
+    {
+     "id": "sim-2958",
+     "text": "I need to check in which situations can I ask for a refund"
+    },
+    {
+     "id": "sim-3643",
+     "text": "help me seeing in what situations can i ask for a refund"
+    },
+    {
+     "id": "sim-647",
+     "text": "want help checking in what situations can I ask for a refund"
+    }
+   ],
+   "ticket_ids": [
+    "sim-129",
+    "sim-120",
+    "sim-5",
+    "sim-123",
+    "sim-102",
+    "sim-170",
+    "sim-177",
+    "sim-331",
+    "sim-339",
+    "sim-311",
+    "sim-266",
+    "sim-361",
+    "sim-269",
+    "sim-495",
+    "sim-426",
+    "sim-609",
+    "sim-647",
+    "sim-549",
+    "sim-720",
+    "sim-674",
+    "sim-782",
+    "sim-760",
+    "sim-779",
+    "sim-676",
+    "sim-768",
+    "sim-907",
+    "sim-879",
+    "sim-943",
+    "sim-1169",
+    "sim-1119",
+    "sim-1238",
+    "sim-1291",
+    "sim-1437",
+    "sim-1417",
+    "sim-1361",
+    "sim-1508",
+    "sim-1569",
+    "sim-1656",
+    "sim-1619",
+    "sim-1782",
+    "sim-1770",
+    "sim-1833",
+    "sim-1882",
+    "sim-1870",
+    "sim-1843",
+    "sim-1862",
+    "sim-1938",
+    "sim-2060",
+    "sim-2207",
+    "sim-2147",
+    "sim-2292",
+    "sim-2342",
+    "sim-2265",
+    "sim-2422",
+    "sim-2585",
+    "sim-2510",
+    "sim-2661",
+    "sim-2760",
+    "sim-2958",
+    "sim-3042",
+    "sim-3003",
+    "sim-3234",
+    "sim-3390",
+    "sim-3397",
+    "sim-3522",
+    "sim-3532",
+    "sim-3590",
+    "sim-3643",
+    "sim-3668",
+    "sim-3664",
+    "sim-3606"
+   ],
+   "impact": 71.0,
+   "type": "how-to",
+   "label": {
+    "majority": "check_refund_policy",
+    "purity": 0.437
+   },
    "rank": 19
+  },
+  {
+   "id": 43,
+   "name": "Bills \u00b7 download",
+   "keywords": [
+    "bills",
+    "download",
+    "check"
+   ],
+   "tickets": 70,
+   "share": 0.0188,
+   "customers": 66,
+   "types": {
+    "bug": 1,
+    "complaint": 0,
+    "request": 0,
+    "how-to": 43,
+    "other": 26
+   },
+   "severity": 0.004,
+   "trend": {
+    "status": "steady",
+    "series": [
+     3,
+     2,
+     4,
+     8,
+     2,
+     3,
+     5,
+     3,
+     1,
+     2,
+     0,
+     2,
+     4,
+     1,
+     7,
+     2,
+     0,
+     3,
+     3,
+     2,
+     1,
+     4,
+     0,
+     1,
+     5,
+     1,
+     1,
+     0
+    ],
+    "latest": 12,
+    "expected": 18.81,
+    "ratio": 0.64,
+    "p_value": 0.09512286834364198
+   },
+   "cohesion": 0.608,
+   "examples": [
+    {
+     "id": "sim-418",
+     "text": "find my bill from [person name]"
+    },
+    {
+     "id": "sim-1560",
+     "text": "find my bill [number]"
+    },
+    {
+     "id": "sim-65",
+     "text": "I cannot find the bills from [person name], mail them to me"
+    },
+    {
+     "id": "sim-1842",
+     "text": "can you help me find trhe bills from [person name]?"
+    },
+    {
+     "id": "sim-1615",
+     "text": "how can I see my bill from [person name]?"
+    },
+    {
+     "id": "sim-274",
+     "text": "get bill [number]"
+    }
+   ],
+   "ticket_ids": [
+    "sim-18",
+    "sim-65",
+    "sim-122",
+    "sim-212",
+    "sim-227",
+    "sim-325",
+    "sim-380",
+    "sim-371",
+    "sim-274",
+    "sim-502",
+    "sim-428",
+    "sim-462",
+    "sim-456",
+    "sim-449",
+    "sim-442",
+    "sim-418",
+    "sim-393",
+    "sim-660",
+    "sim-615",
+    "sim-724",
+    "sim-684",
+    "sim-778",
+    "sim-914",
+    "sim-916",
+    "sim-869",
+    "sim-898",
+    "sim-905",
+    "sim-973",
+    "sim-1039",
+    "sim-933",
+    "sim-1137",
+    "sim-1257",
+    "sim-1306",
+    "sim-1560",
+    "sim-1457",
+    "sim-1615",
+    "sim-1632",
+    "sim-1580",
+    "sim-1598",
+    "sim-1743",
+    "sim-1816",
+    "sim-1878",
+    "sim-1900",
+    "sim-1893",
+    "sim-1921",
+    "sim-1849",
+    "sim-1842",
+    "sim-2071",
+    "sim-1987",
+    "sim-2255",
+    "sim-2253",
+    "sim-2236",
+    "sim-2388",
+    "sim-2408",
+    "sim-2366",
+    "sim-2591",
+    "sim-2552",
+    "sim-2754",
+    "sim-2768",
+    "sim-2805",
+    "sim-2808",
+    "sim-2871",
+    "sim-3081",
+    "sim-3246",
+    "sim-3242",
+    "sim-3313",
+    "sim-3305",
+    "sim-3248",
+    "sim-3418",
+    "sim-3507"
+   ],
+   "impact": 70.3,
+   "type": "how-to",
+   "label": {
+    "majority": "check_invoice",
+    "purity": 0.629
+   },
+   "rank": 20
+  },
+  {
+   "id": 22,
+   "name": "Reimbursement \u00b7 policy",
+   "keywords": [
+    "reimbursement",
+    "policy",
+    "money",
+    "waiting",
+    "dollars",
+    "seeing"
+   ],
+   "tickets": 61,
+   "share": 0.0164,
+   "customers": 60,
+   "types": {
+    "bug": 0,
+    "complaint": 0,
+    "request": 1,
+    "how-to": 27,
+    "other": 33
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     4,
+     1,
+     4,
+     1,
+     1,
+     2,
+     0,
+     2,
+     3,
+     3,
+     2,
+     2,
+     0,
+     0,
+     1,
+     5,
+     2,
+     1,
+     4,
+     1,
+     3,
+     2,
+     1,
+     4,
+     4,
+     2,
+     3,
+     3
+    ],
+    "latest": 19,
+    "expected": 13.62,
+    "ratio": 1.39,
+    "p_value": 0.14490684254257427
+   },
+   "cohesion": 0.627,
+   "examples": [
+    {
+     "id": "sim-3087",
+     "text": "how can I see your reimbursement policy?"
+    },
+    {
+     "id": "sim-2031",
+     "text": "how can I check your reimbursement policy?"
+    },
+    {
+     "id": "sim-2228",
+     "text": "I do not know how I can see your reimbursement policy"
+    },
+    {
+     "id": "sim-714",
+     "text": "how to get a reimbursement?"
+    },
+    {
+     "id": "sim-1424",
+     "text": "want help to see your reimbursement policy"
+    },
+    {
+     "id": "sim-128",
+     "text": "where can i see if there are any news on the reimbursement"
+    }
+   ],
+   "ticket_ids": [
+    "sim-139",
+    "sim-52",
+    "sim-128",
+    "sim-142",
+    "sim-189",
+    "sim-281",
+    "sim-292",
+    "sim-332",
+    "sim-342",
+    "sim-474",
+    "sim-650",
+    "sim-785",
+    "sim-714",
+    "sim-958",
+    "sim-950",
+    "sim-1053",
+    "sim-1121",
+    "sim-1140",
+    "sim-1197",
+    "sim-1266",
+    "sim-1220",
+    "sim-1339",
+    "sim-1424",
+    "sim-1561",
+    "sim-1477",
+    "sim-1834",
+    "sim-2003",
+    "sim-1985",
+    "sim-2031",
+    "sim-1990",
+    "sim-1986",
+    "sim-2172",
+    "sim-2102",
+    "sim-2228",
+    "sim-2430",
+    "sim-2482",
+    "sim-2469",
+    "sim-2439",
+    "sim-2508",
+    "sim-2673",
+    "sim-2640",
+    "sim-2628",
+    "sim-2889",
+    "sim-2763",
+    "sim-3027",
+    "sim-3093",
+    "sim-3061",
+    "sim-3141",
+    "sim-3087",
+    "sim-3347",
+    "sim-3219",
+    "sim-3287",
+    "sim-3340",
+    "sim-3428",
+    "sim-3464",
+    "sim-3512",
+    "sim-3517",
+    "sim-3550",
+    "sim-3670",
+    "sim-3607",
+    "sim-3644"
+   ],
+   "impact": 61.0,
+   "type": "how-to",
+   "label": {
+    "majority": "get_refund",
+    "purity": 0.393
+   },
+   "rank": 21
   },
   {
    "id": 1,
@@ -4366,19 +4516,19 @@
     "expect",
     "soon",
     "check",
-    "dollars",
     "parcel",
-    "shipment"
+    "shipment",
+    "restitution"
    ],
-   "tickets": 66,
-   "share": 0.0177,
-   "customers": 63,
+   "tickets": 56,
+   "share": 0.0151,
+   "customers": 53,
    "types": {
     "bug": 0,
     "complaint": 0,
     "request": 0,
-    "how-to": 48,
-    "other": 18
+    "how-to": 49,
+    "other": 7
    },
    "severity": 0.0,
    "trend": {
@@ -4386,39 +4536,39 @@
     "series": [
      3,
      2,
-     4,
+     3,
      2,
      1,
      2,
      4,
      2,
-     2,
+     1,
      1,
      0,
-     1,
-     4,
+     0,
      3,
-     7,
+     3,
+     5,
      1,
+     1,
+     3,
+     1,
+     3,
      2,
-     3,
-     1,
-     3,
-     3,
      1,
      1,
      3,
-     4,
-     2,
+     3,
+     1,
      4,
      0
     ],
-    "latest": 15,
-    "expected": 16.17,
+    "latest": 13,
+    "expected": 13.95,
     "ratio": 0.93,
-    "p_value": 0.4499001281124378
+    "p_value": 0.4841092387116107
    },
-   "cohesion": 0.706,
+   "cohesion": 0.763,
    "examples": [
     {
      "id": "sim-1892",
@@ -4453,7 +4603,6 @@
     "sim-157",
     "sim-288",
     "sim-299",
-    "sim-339",
     "sim-358",
     "sim-533",
     "sim-443",
@@ -4461,32 +4610,26 @@
     "sim-718",
     "sim-774",
     "sim-913",
-    "sim-907",
     "sim-825",
     "sim-890",
+    "sim-888",
     "sim-946",
     "sim-966",
-    "sim-1169",
     "sim-1133",
     "sim-1293",
-    "sim-1508",
     "sim-1581",
     "sim-1677",
     "sim-1685",
-    "sim-1675",
     "sim-1796",
     "sim-1697",
     "sim-1757",
     "sim-1892",
     "sim-1875",
-    "sim-1870",
     "sim-1926",
-    "sim-1895",
     "sim-1887",
     "sim-1840",
     "sim-2062",
     "sim-2135",
-    "sim-2133",
     "sim-2304",
     "sim-2220",
     "sim-2306",
@@ -4495,7 +4638,6 @@
     "sim-2491",
     "sim-2517",
     "sim-2687",
-    "sim-2640",
     "sim-2668",
     "sim-2812",
     "sim-2985",
@@ -4505,24 +4647,22 @@
     "sim-3215",
     "sim-3346",
     "sim-3342",
-    "sim-3340",
     "sim-3400",
-    "sim-3428",
     "sim-3557",
     "sim-3572",
     "sim-3496",
     "sim-3537"
    ],
-   "impact": 66.0,
+   "impact": 56.0,
    "type": "how-to",
    "label": {
     "majority": "delivery_period",
-    "purity": 0.727
+    "purity": 0.857
    },
-   "rank": 20
+   "rank": 22
   },
   {
-   "id": 18,
+   "id": 17,
    "name": "Change \u00b7 account",
    "keywords": [
     "change",
@@ -4532,14 +4672,14 @@
     "user",
     "order"
    ],
-   "tickets": 56,
-   "share": 0.0151,
-   "customers": 55,
+   "tickets": 54,
+   "share": 0.0145,
+   "customers": 53,
    "types": {
     "bug": 3,
     "complaint": 0,
-    "request": 36,
-    "how-to": 17,
+    "request": 35,
+    "how-to": 16,
     "other": 0
    },
    "severity": 0.0,
@@ -4547,15 +4687,15 @@
     "status": "steady",
     "series": [
      3,
-     5,
+     4,
      2,
      2,
      1,
-     3,
+     4,
      1,
      1,
      3,
-     5,
+     4,
      2,
      0,
      1,
@@ -4567,7 +4707,7 @@
      1,
      3,
      1,
-     4,
+     3,
      3,
      1,
      0,
@@ -4575,12 +4715,12 @@
      0,
      2
     ],
-    "latest": 10,
+    "latest": 9,
     "expected": 14.59,
-    "ratio": 0.69,
-    "p_value": 0.14005056017935577
+    "ratio": 0.62,
+    "p_value": 0.11661137473123587
    },
-   "cohesion": 0.687,
+   "cohesion": 0.686,
    "examples": [
     {
      "id": "sim-2077",
@@ -4614,7 +4754,6 @@
     "sim-256",
     "sim-182",
     "sim-239",
-    "sim-205",
     "sim-209",
     "sim-272",
     "sim-330",
@@ -4623,6 +4762,7 @@
     "sim-542",
     "sim-719",
     "sim-678",
+    "sim-696",
     "sim-699",
     "sim-824",
     "sim-1017",
@@ -4631,7 +4771,6 @@
     "sim-1081",
     "sim-1244",
     "sim-1274",
-    "sim-1233",
     "sim-1312",
     "sim-1228",
     "sim-1345",
@@ -4654,7 +4793,6 @@
     "sim-2599",
     "sim-2538",
     "sim-2624",
-    "sim-2858",
     "sim-2862",
     "sim-2809",
     "sim-2850",
@@ -4665,456 +4803,13 @@
     "sim-3659",
     "sim-3671"
    ],
-   "impact": 56.0,
+   "impact": 54.0,
    "type": "request",
    "label": {
     "majority": "switch_account",
-    "purity": 0.446
-   },
-   "rank": 21
-  },
-  {
-   "id": 12,
-   "name": "Request \u00b7 cases",
-   "keywords": [
-    "request",
-    "cases",
-    "money",
-    "reimbursements",
-    "refunds",
-    "refunded"
-   ],
-   "tickets": 54,
-   "share": 0.0145,
-   "customers": 53,
-   "types": {
-    "bug": 0,
-    "complaint": 0,
-    "request": 0,
-    "how-to": 48,
-    "other": 6
-   },
-   "severity": 0.0,
-   "trend": {
-    "status": "steady",
-    "series": [
-     2,
-     0,
-     4,
-     1,
-     0,
-     2,
-     4,
-     2,
-     1,
-     3,
-     0,
-     5,
-     2,
-     2,
-     3,
-     2,
-     2,
-     2,
-     2,
-     1,
-     1,
-     1,
-     1,
-     4,
-     1,
-     0,
-     4,
-     2
-    ],
-    "latest": 13,
-    "expected": 13.0,
-    "ratio": 1.0,
-    "p_value": 0.5368952529003185
-   },
-   "cohesion": 0.709,
-   "examples": [
-    {
-     "id": "sim-875",
-     "text": "could i see in what cases can i request refundcs"
-    },
-    {
-     "id": "sim-1452",
-     "text": "check in what cases can i request to be refunded"
-    },
-    {
-     "id": "sim-2956",
-     "text": "I have to see in what cases can I request my money back"
-    },
-    {
-     "id": "sim-1320",
-     "text": "I need to check in which cases can I request my money back"
-    },
-    {
-     "id": "sim-2070",
-     "text": "help to check in which cases can I request my money back"
-    },
-    {
-     "id": "sim-1295",
-     "text": "i try to see in which cases can i request refunss"
-    }
-   ],
-   "ticket_ids": [
-    "sim-98",
-    "sim-27",
-    "sim-271",
-    "sim-320",
-    "sim-311",
-    "sim-316",
-    "sim-495",
-    "sim-773",
-    "sim-779",
-    "sim-875",
-    "sim-838",
-    "sim-897",
-    "sim-878",
-    "sim-938",
-    "sim-1043",
-    "sim-1095",
-    "sim-1295",
-    "sim-1264",
-    "sim-1320",
-    "sim-1474",
-    "sim-1481",
-    "sim-1452",
-    "sim-1571",
-    "sim-1463",
-    "sim-1606",
-    "sim-1641",
-    "sim-1704",
-    "sim-1753",
-    "sim-1869",
-    "sim-1924",
-    "sim-1846",
-    "sim-2021",
-    "sim-2070",
-    "sim-2122",
-    "sim-2174",
-    "sim-2251",
-    "sim-2331",
-    "sim-2440",
-    "sim-2421",
-    "sim-2493",
-    "sim-2734",
-    "sim-2882",
-    "sim-2956",
-    "sim-3055",
-    "sim-3141",
-    "sim-3050",
-    "sim-3072",
-    "sim-3255",
-    "sim-3527",
-    "sim-3571",
-    "sim-3481",
-    "sim-3533",
-    "sim-3642",
-    "sim-3698"
-   ],
-   "impact": 54.0,
-   "type": "how-to",
-   "label": {
-    "majority": "check_refund_policy",
-    "purity": 0.722
-   },
-   "rank": 22
-  },
-  {
-   "id": 23,
-   "name": "Information \u00b7 account",
-   "keywords": [
-    "information",
-    "account"
-   ],
-   "tickets": 53,
-   "share": 0.0143,
-   "customers": 51,
-   "types": {
-    "bug": 0,
-    "complaint": 0,
-    "request": 9,
-    "how-to": 43,
-    "other": 1
-   },
-   "severity": 0.0,
-   "trend": {
-    "status": "steady",
-    "series": [
-     2,
-     0,
-     3,
-     2,
-     1,
-     5,
-     2,
-     3,
-     4,
-     3,
-     4,
-     2,
-     1,
-     1,
-     1,
-     2,
-     0,
-     2,
-     1,
-     1,
-     2,
-     3,
-     1,
-     0,
-     1,
-     4,
-     1,
-     1
-    ],
-    "latest": 11,
-    "expected": 13.32,
-    "ratio": 0.83,
-    "p_value": 0.3217930327425136
-   },
-   "cohesion": 0.714,
-   "examples": [
-    {
-     "id": "sim-415",
-     "text": "how can I get information about [account category] account removals?"
-    },
-    {
-     "id": "sim-2522",
-     "text": "correcting information on [account type] account"
-    },
-    {
-     "id": "sim-787",
-     "text": "changing information on [account category] account"
-    },
-    {
-     "id": "sim-1047",
-     "text": "updating information on [account type] account"
-    },
-    {
-     "id": "sim-2692",
-     "text": "editing information on [account type] account"
-    },
-    {
-     "id": "sim-2890",
-     "text": "change information on [account category] account"
-    }
-   ],
-   "ticket_ids": [
-    "sim-111",
-    "sim-61",
-    "sim-319",
-    "sim-375",
-    "sim-379",
-    "sim-415",
-    "sim-511",
-    "sim-547",
-    "sim-750",
-    "sim-675",
-    "sim-709",
-    "sim-715",
-    "sim-787",
-    "sim-852",
-    "sim-822",
-    "sim-1036",
-    "sim-1000",
-    "sim-1030",
-    "sim-1047",
-    "sim-1161",
-    "sim-1054",
-    "sim-1069",
-    "sim-1205",
-    "sim-1253",
-    "sim-1259",
-    "sim-1372",
-    "sim-1376",
-    "sim-1412",
-    "sim-1388",
-    "sim-1530",
-    "sim-1479",
-    "sim-1576",
-    "sim-1769",
-    "sim-1864",
-    "sim-1962",
-    "sim-2043",
-    "sim-2290",
-    "sim-2217",
-    "sim-2486",
-    "sim-2522",
-    "sim-2646",
-    "sim-2692",
-    "sim-2890",
-    "sim-2860",
-    "sim-2879",
-    "sim-2988",
-    "sim-3338",
-    "sim-3361",
-    "sim-3431",
-    "sim-3450",
-    "sim-3437",
-    "sim-3542",
-    "sim-3697"
-   ],
-   "impact": 53.0,
-   "type": "how-to",
-   "label": {
-    "majority": "edit_account",
-    "purity": 0.434
+    "purity": 0.426
    },
    "rank": 23
-  },
-  {
-   "id": 42,
-   "name": "Corporate \u00b7 newsletter",
-   "keywords": [
-    "corporate",
-    "newsletter",
-    "receive",
-    "unsubscribe",
-    "sign",
-    "ur"
-   ],
-   "tickets": 52,
-   "share": 0.014,
-   "customers": 50,
-   "types": {
-    "bug": 2,
-    "complaint": 0,
-    "request": 6,
-    "how-to": 28,
-    "other": 16
-   },
-   "severity": 0.0,
-   "trend": {
-    "status": "steady",
-    "series": [
-     1,
-     0,
-     1,
-     2,
-     2,
-     3,
-     1,
-     5,
-     2,
-     4,
-     2,
-     2,
-     4,
-     3,
-     2,
-     2,
-     0,
-     3,
-     0,
-     2,
-     0,
-     2,
-     2,
-     2,
-     1,
-     1,
-     1,
-     2
-    ],
-    "latest": 11,
-    "expected": 13.0,
-    "ratio": 0.85,
-    "p_value": 0.3531649328512703
-   },
-   "cohesion": 0.753,
-   "examples": [
-    {
-     "id": "sim-2607",
-     "text": "tell me more about subscribing to your corporate newsletter"
-    },
-    {
-     "id": "sim-1196",
-     "text": "could you help me receiving the corporate newsletter?"
-    },
-    {
-     "id": "sim-944",
-     "text": "i want helpunsubscribing to the corporate newsletter"
-    },
-    {
-     "id": "sim-3077",
-     "text": "tell me about receiving ur corporate newsletter"
-    },
-    {
-     "id": "sim-2234",
-     "text": "where do i subscribe to ur corporate newsletter"
-    },
-    {
-     "id": "sim-1589",
-     "text": "I can't receive the corporate newsletter"
-    }
-   ],
-   "ticket_ids": [
-    "sim-57",
-    "sim-304",
-    "sim-416",
-    "sim-522",
-    "sim-618",
-    "sim-664",
-    "sim-708",
-    "sim-697",
-    "sim-694",
-    "sim-821",
-    "sim-1014",
-    "sim-1005",
-    "sim-947",
-    "sim-1044",
-    "sim-944",
-    "sim-1080",
-    "sim-1107",
-    "sim-1263",
-    "sim-1327",
-    "sim-1289",
-    "sim-1196",
-    "sim-1431",
-    "sim-1382",
-    "sim-1489",
-    "sim-1453",
-    "sim-1597",
-    "sim-1589",
-    "sim-1672",
-    "sim-1687",
-    "sim-1725",
-    "sim-1717",
-    "sim-1724",
-    "sim-1828",
-    "sim-1894",
-    "sim-2073",
-    "sim-2058",
-    "sim-2234",
-    "sim-2271",
-    "sim-2287",
-    "sim-2525",
-    "sim-2607",
-    "sim-2893",
-    "sim-2796",
-    "sim-2948",
-    "sim-3026",
-    "sim-3085",
-    "sim-3077",
-    "sim-3206",
-    "sim-3446",
-    "sim-3539",
-    "sim-3611",
-    "sim-3681"
-   ],
-   "impact": 52.0,
-   "type": "how-to",
-   "label": {
-    "majority": "newsletter_subscription",
-    "purity": 1.0
-   },
-   "rank": 24
   },
   {
    "id": 8,
@@ -5122,19 +4817,19 @@
    "keywords": [
     "arrive",
     "going",
+    "check",
     "package",
     "gonna",
-    "check",
     "item"
    ],
-   "tickets": 51,
-   "share": 0.0137,
-   "customers": 49,
+   "tickets": 53,
+   "share": 0.0143,
+   "customers": 51,
    "types": {
     "bug": 0,
     "complaint": 0,
     "request": 1,
-    "how-to": 46,
+    "how-to": 48,
     "other": 4
    },
    "severity": 0.0,
@@ -5150,7 +4845,7 @@
      4,
      3,
      1,
-     2,
+     4,
      0,
      0,
      0,
@@ -5171,19 +4866,19 @@
      1
     ],
     "latest": 8,
-    "expected": 13.63,
-    "ratio": 0.59,
-    "p_value": 0.07409901742006146
+    "expected": 14.59,
+    "ratio": 0.55,
+    "p_value": 0.07114583432625737
    },
-   "cohesion": 0.73,
+   "cohesion": 0.712,
    "examples": [
-    {
-     "id": "sim-2117",
-     "text": "I call to see when my parcel is going to arrive"
-    },
     {
      "id": "sim-94",
      "text": "how could I check when my package is going to arrive?"
+    },
+    {
+     "id": "sim-2117",
+     "text": "I call to see when my parcel is going to arrive"
     },
     {
      "id": "sim-327",
@@ -5228,6 +4923,8 @@
     "sim-1129",
     "sim-1255",
     "sim-1192",
+    "sim-1268",
+    "sim-1194",
     "sim-1771",
     "sim-1720",
     "sim-1795",
@@ -5255,13 +4952,593 @@
     "sim-3398",
     "sim-3600"
    ],
-   "impact": 51.0,
+   "impact": 53.0,
    "type": "how-to",
    "label": {
     "majority": "delivery_period",
-    "purity": 0.98
+    "purity": 0.943
+   },
+   "rank": 24
+  },
+  {
+   "id": 23,
+   "name": "Information \u00b7 account",
+   "keywords": [
+    "information",
+    "account"
+   ],
+   "tickets": 51,
+   "share": 0.0137,
+   "customers": 49,
+   "types": {
+    "bug": 0,
+    "complaint": 0,
+    "request": 9,
+    "how-to": 40,
+    "other": 2
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     1,
+     0,
+     2,
+     2,
+     1,
+     5,
+     2,
+     3,
+     4,
+     3,
+     4,
+     2,
+     1,
+     1,
+     1,
+     2,
+     1,
+     2,
+     0,
+     1,
+     2,
+     3,
+     1,
+     0,
+     1,
+     4,
+     1,
+     1
+    ],
+    "latest": 11,
+    "expected": 12.97,
+    "ratio": 0.85,
+    "p_value": 0.383445659695849
+   },
+   "cohesion": 0.709,
+   "examples": [
+    {
+     "id": "sim-415",
+     "text": "how can I get information about [account category] account removals?"
+    },
+    {
+     "id": "sim-2522",
+     "text": "correcting information on [account type] account"
+    },
+    {
+     "id": "sim-787",
+     "text": "changing information on [account category] account"
+    },
+    {
+     "id": "sim-1047",
+     "text": "updating information on [account type] account"
+    },
+    {
+     "id": "sim-2890",
+     "text": "change information on [account category] account"
+    },
+    {
+     "id": "sim-2692",
+     "text": "editing information on [account type] account"
+    }
+   ],
+   "ticket_ids": [
+    "sim-61",
+    "sim-375",
+    "sim-379",
+    "sim-415",
+    "sim-511",
+    "sim-547",
+    "sim-750",
+    "sim-675",
+    "sim-709",
+    "sim-715",
+    "sim-787",
+    "sim-852",
+    "sim-822",
+    "sim-1036",
+    "sim-1000",
+    "sim-1030",
+    "sim-1047",
+    "sim-1161",
+    "sim-1054",
+    "sim-1069",
+    "sim-1205",
+    "sim-1253",
+    "sim-1259",
+    "sim-1372",
+    "sim-1376",
+    "sim-1412",
+    "sim-1388",
+    "sim-1530",
+    "sim-1479",
+    "sim-1576",
+    "sim-1769",
+    "sim-1864",
+    "sim-1962",
+    "sim-2043",
+    "sim-2106",
+    "sim-2290",
+    "sim-2217",
+    "sim-2522",
+    "sim-2646",
+    "sim-2692",
+    "sim-2890",
+    "sim-2860",
+    "sim-2879",
+    "sim-2988",
+    "sim-3338",
+    "sim-3361",
+    "sim-3431",
+    "sim-3450",
+    "sim-3437",
+    "sim-3542",
+    "sim-3697"
+   ],
+   "impact": 51.0,
+   "type": "how-to",
+   "label": {
+    "majority": "edit_account",
+    "purity": 0.451
    },
    "rank": 25
+  },
+  {
+   "id": 27,
+   "name": "Ask \u00b7 cases",
+   "keywords": [
+    "ask",
+    "cases",
+    "refunds",
+    "reimbursed",
+    "refunded",
+    "reimbursements"
+   ],
+   "tickets": 50,
+   "share": 0.0134,
+   "customers": 49,
+   "types": {
+    "bug": 0,
+    "complaint": 0,
+    "request": 0,
+    "how-to": 48,
+    "other": 2
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     1,
+     4,
+     0,
+     2,
+     2,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     5,
+     2,
+     0,
+     2,
+     3,
+     2,
+     3,
+     2,
+     2,
+     1,
+     3,
+     3,
+     1,
+     3,
+     1,
+     2
+    ],
+    "latest": 14,
+    "expected": 11.68,
+    "ratio": 1.2,
+    "p_value": 0.3315949883066836
+   },
+   "cohesion": 0.767,
+   "examples": [
+    {
+     "id": "sim-2357",
+     "text": "can I see in which cases can I ask to be refunded?"
+    },
+    {
+     "id": "sim-727",
+     "text": "can I see in which cases can I ask to be reimbursed?"
+    },
+    {
+     "id": "sim-3261",
+     "text": "can i cxheck in which cases can i ask for refunds"
+    },
+    {
+     "id": "sim-1400",
+     "text": "in which situationscan i ask to be refunded"
+    },
+    {
+     "id": "sim-1753",
+     "text": "help to check in which cases can I ask to be refunded"
+    },
+    {
+     "id": "sim-2544",
+     "text": "I want help to see in what cases can I ask to be refunded"
+    }
+   ],
+   "ticket_ids": [
+    "sim-68",
+    "sim-164",
+    "sim-234",
+    "sim-191",
+    "sim-246",
+    "sim-436",
+    "sim-435",
+    "sim-551",
+    "sim-654",
+    "sim-727",
+    "sim-864",
+    "sim-1025",
+    "sim-1287",
+    "sim-1400",
+    "sim-1491",
+    "sim-1682",
+    "sim-1668",
+    "sim-1667",
+    "sim-1630",
+    "sim-1602",
+    "sim-1734",
+    "sim-1753",
+    "sim-1996",
+    "sim-2074",
+    "sim-2193",
+    "sim-2131",
+    "sim-2128",
+    "sim-2224",
+    "sim-2263",
+    "sim-2382",
+    "sim-2357",
+    "sim-2420",
+    "sim-2544",
+    "sim-2497",
+    "sim-2703",
+    "sim-2756",
+    "sim-2787",
+    "sim-2995",
+    "sim-2926",
+    "sim-3030",
+    "sim-3113",
+    "sim-3181",
+    "sim-3188",
+    "sim-3261",
+    "sim-3391",
+    "sim-3415",
+    "sim-3441",
+    "sim-3545",
+    "sim-3683",
+    "sim-3630"
+   ],
+   "impact": 50.0,
+   "type": "how-to",
+   "label": {
+    "majority": "check_refund_policy",
+    "purity": 0.88
+   },
+   "rank": 26
+  },
+  {
+   "id": 46,
+   "name": "Corporate \u00b7 newsletter",
+   "keywords": [
+    "corporate",
+    "newsletter",
+    "receive",
+    "unsubscribe",
+    "ur",
+    "sign"
+   ],
+   "tickets": 50,
+   "share": 0.0134,
+   "customers": 48,
+   "types": {
+    "bug": 2,
+    "complaint": 0,
+    "request": 5,
+    "how-to": 27,
+    "other": 16
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     1,
+     0,
+     1,
+     2,
+     1,
+     3,
+     1,
+     5,
+     1,
+     4,
+     2,
+     2,
+     4,
+     3,
+     2,
+     2,
+     0,
+     3,
+     0,
+     2,
+     0,
+     2,
+     2,
+     2,
+     1,
+     1,
+     1,
+     2
+    ],
+    "latest": 11,
+    "expected": 12.65,
+    "ratio": 0.87,
+    "p_value": 0.41381086259020616
+   },
+   "cohesion": 0.761,
+   "examples": [
+    {
+     "id": "sim-1196",
+     "text": "could you help me receiving the corporate newsletter?"
+    },
+    {
+     "id": "sim-2607",
+     "text": "tell me more about subscribing to your corporate newsletter"
+    },
+    {
+     "id": "sim-944",
+     "text": "i want helpunsubscribing to the corporate newsletter"
+    },
+    {
+     "id": "sim-3077",
+     "text": "tell me about receiving ur corporate newsletter"
+    },
+    {
+     "id": "sim-1589",
+     "text": "I can't receive the corporate newsletter"
+    },
+    {
+     "id": "sim-2234",
+     "text": "where do i subscribe to ur corporate newsletter"
+    }
+   ],
+   "ticket_ids": [
+    "sim-57",
+    "sim-304",
+    "sim-416",
+    "sim-522",
+    "sim-664",
+    "sim-708",
+    "sim-697",
+    "sim-694",
+    "sim-821",
+    "sim-1014",
+    "sim-1005",
+    "sim-947",
+    "sim-1044",
+    "sim-944",
+    "sim-1080",
+    "sim-1263",
+    "sim-1327",
+    "sim-1289",
+    "sim-1196",
+    "sim-1431",
+    "sim-1382",
+    "sim-1489",
+    "sim-1453",
+    "sim-1597",
+    "sim-1589",
+    "sim-1672",
+    "sim-1687",
+    "sim-1725",
+    "sim-1717",
+    "sim-1724",
+    "sim-1828",
+    "sim-1894",
+    "sim-2073",
+    "sim-2058",
+    "sim-2234",
+    "sim-2271",
+    "sim-2287",
+    "sim-2525",
+    "sim-2607",
+    "sim-2893",
+    "sim-2796",
+    "sim-2948",
+    "sim-3026",
+    "sim-3085",
+    "sim-3077",
+    "sim-3206",
+    "sim-3446",
+    "sim-3539",
+    "sim-3611",
+    "sim-3681"
+   ],
+   "impact": 50.0,
+   "type": "how-to",
+   "label": {
+    "majority": "newsletter_subscription",
+    "purity": 1.0
+   },
+   "rank": 27
+  },
+  {
+   "id": 12,
+   "name": "Request \u00b7 cases",
+   "keywords": [
+    "request",
+    "cases",
+    "money",
+    "reimbursements",
+    "refunds",
+    "refunded"
+   ],
+   "tickets": 49,
+   "share": 0.0132,
+   "customers": 48,
+   "types": {
+    "bug": 0,
+    "complaint": 0,
+    "request": 0,
+    "how-to": 43,
+    "other": 6
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     2,
+     0,
+     3,
+     0,
+     0,
+     1,
+     4,
+     2,
+     1,
+     3,
+     0,
+     5,
+     2,
+     1,
+     3,
+     2,
+     2,
+     2,
+     2,
+     1,
+     1,
+     1,
+     1,
+     3,
+     1,
+     0,
+     4,
+     2
+    ],
+    "latest": 12,
+    "expected": 12.0,
+    "ratio": 1.0,
+    "p_value": 0.554822703501082
+   },
+   "cohesion": 0.732,
+   "examples": [
+    {
+     "id": "sim-875",
+     "text": "could i see in what cases can i request refundcs"
+    },
+    {
+     "id": "sim-1452",
+     "text": "check in what cases can i request to be refunded"
+    },
+    {
+     "id": "sim-2956",
+     "text": "I have to see in what cases can I request my money back"
+    },
+    {
+     "id": "sim-1320",
+     "text": "I need to check in which cases can I request my money back"
+    },
+    {
+     "id": "sim-2070",
+     "text": "help to check in which cases can I request my money back"
+    },
+    {
+     "id": "sim-1295",
+     "text": "i try to see in which cases can i request refunss"
+    }
+   ],
+   "ticket_ids": [
+    "sim-98",
+    "sim-27",
+    "sim-271",
+    "sim-320",
+    "sim-316",
+    "sim-773",
+    "sim-875",
+    "sim-838",
+    "sim-897",
+    "sim-878",
+    "sim-938",
+    "sim-1043",
+    "sim-1095",
+    "sim-1295",
+    "sim-1264",
+    "sim-1320",
+    "sim-1474",
+    "sim-1481",
+    "sim-1452",
+    "sim-1571",
+    "sim-1463",
+    "sim-1606",
+    "sim-1641",
+    "sim-1704",
+    "sim-1869",
+    "sim-1924",
+    "sim-1846",
+    "sim-2021",
+    "sim-2070",
+    "sim-2122",
+    "sim-2174",
+    "sim-2251",
+    "sim-2331",
+    "sim-2440",
+    "sim-2421",
+    "sim-2493",
+    "sim-2734",
+    "sim-2882",
+    "sim-2956",
+    "sim-3055",
+    "sim-3050",
+    "sim-3072",
+    "sim-3255",
+    "sim-3527",
+    "sim-3571",
+    "sim-3481",
+    "sim-3533",
+    "sim-3642",
+    "sim-3698"
+   ],
+   "impact": 49.0,
+   "type": "how-to",
+   "label": {
+    "majority": "check_refund_policy",
+    "purity": 0.714
+   },
+   "rank": 28
   },
   {
    "id": 15,
@@ -5273,14 +5550,14 @@
     "products",
     "order"
    ],
-   "tickets": 50,
-   "share": 0.0134,
-   "customers": 50,
+   "tickets": 48,
+   "share": 0.0129,
+   "customers": 48,
    "types": {
     "bug": 0,
     "complaint": 0,
     "request": 23,
-    "how-to": 27,
+    "how-to": 25,
     "other": 0
    },
    "severity": 0.0,
@@ -5308,20 +5585,20 @@
      1,
      2,
      1,
-     4,
+     3,
      2,
      1,
-     4,
+     3,
      3,
      3,
      0
     ],
-    "latest": 17,
-    "expected": 10.46,
-    "ratio": 1.62,
-    "p_value": 0.03856515035587527
+    "latest": 15,
+    "expected": 10.7,
+    "ratio": 1.4,
+    "p_value": 0.17713637099442575
    },
-   "cohesion": 0.549,
+   "cohesion": 0.56,
    "examples": [
     {
      "id": "sim-1548",
@@ -5384,7 +5661,6 @@
     "sim-2635",
     "sim-2824",
     "sim-2799",
-    "sim-2760",
     "sim-2868",
     "sim-3043",
     "sim-3040",
@@ -5392,7 +5668,6 @@
     "sim-3200",
     "sim-3329",
     "sim-3244",
-    "sim-3285",
     "sim-3355",
     "sim-3405",
     "sim-3376",
@@ -5400,174 +5675,29 @@
     "sim-3548",
     "sim-3524"
    ],
-   "impact": 50.0,
+   "impact": 48.0,
    "type": "how-to",
    "label": {
     "majority": "delete_account",
-    "purity": 0.42
+    "purity": 0.438
    },
-   "rank": 26
+   "rank": 29
   },
   {
-   "id": 29,
-   "name": "Pin \u00b7 user",
-   "keywords": [
-    "pin",
-    "user",
-    "code",
-    "reset",
-    "retrieve",
-    "pwd"
-   ],
-   "tickets": 49,
-   "share": 0.0132,
-   "customers": 49,
-   "types": {
-    "bug": 7,
-    "complaint": 0,
-    "request": 2,
-    "how-to": 15,
-    "other": 25
-   },
-   "severity": 0.0,
-   "trend": {
-    "status": "steady",
-    "series": [
-     1,
-     2,
-     1,
-     1,
-     1,
-     3,
-     0,
-     4,
-     2,
-     4,
-     1,
-     0,
-     1,
-     2,
-     0,
-     4,
-     5,
-     0,
-     3,
-     2,
-     3,
-     1,
-     1,
-     1,
-     2,
-     0,
-     3,
-     1
-    ],
-    "latest": 9,
-    "expected": 12.68,
-    "ratio": 0.71,
-    "p_value": 0.18779117786384003
-   },
-   "cohesion": 0.701,
-   "examples": [
-    {
-     "id": "sim-1694",
-     "text": "help me retrieve my user account pin code"
-    },
-    {
-     "id": "sim-2145",
-     "text": "i have to resdet my user pin code"
-    },
-    {
-     "id": "sim-3534",
-     "text": "I cannot recover my account PIN code"
-    },
-    {
-     "id": "sim-517",
-     "text": "I cannot remember my account PIN, I haved to reset it"
-    },
-    {
-     "id": "sim-2198",
-     "text": "I have to retrieve my user PIN"
-    },
-    {
-     "id": "sim-352",
-     "text": "help restoring my PIN code"
-    }
-   ],
-   "ticket_ids": [
-    "sim-86",
-    "sim-196",
-    "sim-144",
-    "sim-352",
-    "sim-517",
-    "sim-631",
-    "sim-731",
-    "sim-737",
-    "sim-749",
-    "sim-952",
-    "sim-976",
-    "sim-927",
-    "sim-1046",
-    "sim-1064",
-    "sim-1165",
-    "sim-1267",
-    "sim-1298",
-    "sim-1190",
-    "sim-1321",
-    "sim-1347",
-    "sim-1640",
-    "sim-1694",
-    "sim-1747",
-    "sim-1992",
-    "sim-1952",
-    "sim-1958",
-    "sim-1972",
-    "sim-2114",
-    "sim-2145",
-    "sim-2100",
-    "sim-2157",
-    "sim-2198",
-    "sim-2414",
-    "sim-2413",
-    "sim-2384",
-    "sim-2523",
-    "sim-2578",
-    "sim-2618",
-    "sim-2740",
-    "sim-2708",
-    "sim-2816",
-    "sim-3015",
-    "sim-3151",
-    "sim-3307",
-    "sim-3222",
-    "sim-3526",
-    "sim-3492",
-    "sim-3534",
-    "sim-3686"
-   ],
-   "impact": 49.0,
-   "type": "how-to",
-   "label": {
-    "majority": "recover_password",
-    "purity": 0.898
-   },
-   "rank": 27
-  },
-  {
-   "id": 32,
+   "id": 36,
    "name": "Cancelling \u00b7 purchase",
    "keywords": [
     "cancelling",
     "purchase",
     "order"
    ],
-   "tickets": 49,
-   "share": 0.0132,
-   "customers": 47,
+   "tickets": 48,
+   "share": 0.0129,
+   "customers": 46,
    "types": {
     "bug": 3,
     "complaint": 0,
-    "request": 43,
+    "request": 42,
     "how-to": 0,
     "other": 3
    },
@@ -5577,7 +5707,7 @@
     "series": [
      0,
      1,
-     3,
+     2,
      4,
      2,
      1,
@@ -5605,11 +5735,11 @@
      1
     ],
     "latest": 14,
-    "expected": 11.1,
-    "ratio": 1.26,
-    "p_value": 0.22782148269683752
+    "expected": 11.03,
+    "ratio": 1.27,
+    "p_value": 0.2729263446053183
    },
-   "cohesion": 0.783,
+   "cohesion": 0.788,
    "examples": [
     {
      "id": "sim-2932",
@@ -5620,26 +5750,25 @@
      "text": "can you help me cancelling purchase [order number]?"
     },
     {
-     "id": "sim-280",
-     "text": "I need assistance cancelling purchase [order number]"
+     "id": "sim-3504",
+     "text": "i need assistance cancelling purchase [order number]"
     },
     {
-     "id": "sim-367",
-     "text": "i need help cancelling purchase [order number]"
+     "id": "sim-1427",
+     "text": "I need help cancelling purchase [order number]"
     },
     {
      "id": "sim-1035",
      "text": "assistance with cancelling pucrhase [order number]"
     },
     {
-     "id": "sim-531",
+     "id": "sim-2443",
      "text": "can uhelp me cancelling purchase [order number]"
     }
    ],
    "ticket_ids": [
     "sim-258",
     "sim-367",
-    "sim-348",
     "sim-280",
     "sim-431",
     "sim-389",
@@ -5687,13 +5816,13 @@
     "sim-3513",
     "sim-3626"
    ],
-   "impact": 49.0,
+   "impact": 48.0,
    "type": "request",
    "label": {
     "majority": "cancel_order",
-    "purity": 0.857
+    "purity": 0.875
    },
-   "rank": 28
+   "rank": 30
   },
   {
    "id": 9,
@@ -5750,9 +5879,9 @@
      1
     ],
     "latest": 9,
-    "expected": 11.73,
-    "ratio": 0.77,
-    "p_value": 0.2666166502275398
+    "expected": 12.0,
+    "ratio": 0.75,
+    "p_value": 0.27909328298669933
    },
    "cohesion": 0.72,
    "examples": [
@@ -5835,7 +5964,426 @@
     "majority": "delivery_period",
     "purity": 0.609
    },
-   "rank": 29
+   "rank": 31
+  },
+  {
+   "id": 34,
+   "name": "Key \u00b7 access",
+   "keywords": [
+    "key",
+    "access",
+    "user",
+    "retrieve",
+    "profile",
+    "recover"
+   ],
+   "tickets": 45,
+   "share": 0.0121,
+   "customers": 43,
+   "types": {
+    "bug": 3,
+    "complaint": 0,
+    "request": 0,
+    "how-to": 16,
+    "other": 26
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     1,
+     1,
+     2,
+     0,
+     1,
+     2,
+     3,
+     2,
+     1,
+     3,
+     2,
+     1,
+     1,
+     2,
+     2,
+     1,
+     1,
+     2,
+     2,
+     1,
+     1,
+     1,
+     5,
+     1,
+     1,
+     2,
+     1,
+     2
+    ],
+    "latest": 13,
+    "expected": 10.38,
+    "ratio": 1.25,
+    "p_value": 0.29662838273682385
+   },
+   "cohesion": 0.753,
+   "examples": [
+    {
+     "id": "sim-3368",
+     "text": "where do I retrieve my user access key?"
+    },
+    {
+     "id": "sim-2963",
+     "text": "i cant restore my key"
+    },
+    {
+     "id": "sim-1021",
+     "text": "I need helprestoring my user access key"
+    },
+    {
+     "id": "sim-1702",
+     "text": "can you help me resetting the access key of my account?"
+    },
+    {
+     "id": "sim-1528",
+     "text": "give me infrmation about my access key retrieval"
+    },
+    {
+     "id": "sim-2169",
+     "text": "wanna reset the access key of my account"
+    }
+   ],
+   "ticket_ids": [
+    "sim-121",
+    "sim-199",
+    "sim-329",
+    "sim-282",
+    "sim-543",
+    "sim-711",
+    "sim-757",
+    "sim-816",
+    "sim-865",
+    "sim-896",
+    "sim-1021",
+    "sim-945",
+    "sim-1059",
+    "sim-1321",
+    "sim-1222",
+    "sim-1254",
+    "sim-1426",
+    "sim-1395",
+    "sim-1528",
+    "sim-1613",
+    "sim-1702",
+    "sim-1801",
+    "sim-1830",
+    "sim-1847",
+    "sim-2006",
+    "sim-2169",
+    "sim-2269",
+    "sim-2337",
+    "sim-2386",
+    "sim-2449",
+    "sim-2578",
+    "sim-2618",
+    "sim-2781",
+    "sim-2939",
+    "sim-2963",
+    "sim-3011",
+    "sim-2960",
+    "sim-3007",
+    "sim-3106",
+    "sim-3345",
+    "sim-3425",
+    "sim-3368",
+    "sim-3583",
+    "sim-3661",
+    "sim-3597"
+   ],
+   "impact": 45.0,
+   "type": "how-to",
+   "label": {
+    "majority": "recover_password",
+    "purity": 1.0
+   },
+   "rank": 32
+  },
+  {
+   "id": 32,
+   "name": "Pin \u00b7 code",
+   "keywords": [
+    "pin",
+    "code",
+    "user",
+    "reset",
+    "retrieve",
+    "profile"
+   ],
+   "tickets": 44,
+   "share": 0.0118,
+   "customers": 44,
+   "types": {
+    "bug": 6,
+    "complaint": 0,
+    "request": 2,
+    "how-to": 13,
+    "other": 23
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     1,
+     2,
+     1,
+     1,
+     1,
+     3,
+     0,
+     4,
+     2,
+     2,
+     1,
+     0,
+     1,
+     2,
+     0,
+     4,
+     5,
+     0,
+     3,
+     1,
+     2,
+     0,
+     1,
+     1,
+     2,
+     0,
+     3,
+     1
+    ],
+    "latest": 8,
+    "expected": 11.68,
+    "ratio": 0.69,
+    "p_value": 0.21585847812644965
+   },
+   "cohesion": 0.73,
+   "examples": [
+    {
+     "id": "sim-1694",
+     "text": "help me retrieve my user account pin code"
+    },
+    {
+     "id": "sim-2145",
+     "text": "i have to resdet my user pin code"
+    },
+    {
+     "id": "sim-3534",
+     "text": "I cannot recover my account PIN code"
+    },
+    {
+     "id": "sim-352",
+     "text": "help restoring my PIN code"
+    },
+    {
+     "id": "sim-517",
+     "text": "I cannot remember my account PIN, I haved to reset it"
+    },
+    {
+     "id": "sim-2198",
+     "text": "I have to retrieve my user PIN"
+    }
+   ],
+   "ticket_ids": [
+    "sim-86",
+    "sim-196",
+    "sim-144",
+    "sim-352",
+    "sim-517",
+    "sim-631",
+    "sim-731",
+    "sim-737",
+    "sim-749",
+    "sim-952",
+    "sim-976",
+    "sim-927",
+    "sim-1046",
+    "sim-1064",
+    "sim-1165",
+    "sim-1267",
+    "sim-1190",
+    "sim-1347",
+    "sim-1640",
+    "sim-1694",
+    "sim-1747",
+    "sim-1992",
+    "sim-1952",
+    "sim-1958",
+    "sim-1972",
+    "sim-2114",
+    "sim-2145",
+    "sim-2100",
+    "sim-2157",
+    "sim-2198",
+    "sim-2414",
+    "sim-2413",
+    "sim-2384",
+    "sim-2523",
+    "sim-2740",
+    "sim-2708",
+    "sim-3015",
+    "sim-3151",
+    "sim-3307",
+    "sim-3222",
+    "sim-3526",
+    "sim-3492",
+    "sim-3534",
+    "sim-3686"
+   ],
+   "impact": 44.0,
+   "type": "how-to",
+   "label": {
+    "majority": "recover_password",
+    "purity": 0.932
+   },
+   "rank": 33
+  },
+  {
+   "id": 40,
+   "name": "Cancel \u00b7 order",
+   "keywords": [
+    "cancel",
+    "order",
+    "knwo",
+    "account",
+    "don"
+   ],
+   "tickets": 43,
+   "share": 0.0116,
+   "customers": 42,
+   "types": {
+    "bug": 3,
+    "complaint": 0,
+    "request": 39,
+    "how-to": 1,
+    "other": 0
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     3,
+     1,
+     2,
+     2,
+     2,
+     0,
+     0,
+     0,
+     0,
+     3,
+     1,
+     0,
+     2,
+     4,
+     1,
+     4,
+     1,
+     0,
+     1,
+     3,
+     2,
+     1,
+     0,
+     4,
+     5,
+     1,
+     0,
+     0
+    ],
+    "latest": 11,
+    "expected": 10.38,
+    "ratio": 1.06,
+    "p_value": 0.49212045656679304
+   },
+   "cohesion": 0.782,
+   "examples": [
+    {
+     "id": "sim-1216",
+     "text": "i do not knwo how to cancel order [order number]"
+    },
+    {
+     "id": "sim-2528",
+     "text": "I do not know how I ca cancel order [order number]"
+    },
+    {
+     "id": "sim-180",
+     "text": "whag do i need to do to cancel order [order number]"
+    },
+    {
+     "id": "sim-3303",
+     "text": "help to cancel order [order number]"
+    },
+    {
+     "id": "sim-1963",
+     "text": "i cannot pay for my last item cancel order [order number]"
+    },
+    {
+     "id": "sim-3286",
+     "text": "i cannot pay for these product how do i cancel the order"
+    }
+   ],
+   "ticket_ids": [
+    "sim-95",
+    "sim-115",
+    "sim-133",
+    "sim-180",
+    "sim-372",
+    "sim-300",
+    "sim-429",
+    "sim-430",
+    "sim-554",
+    "sim-568",
+    "sim-1241",
+    "sim-1216",
+    "sim-1273",
+    "sim-1445",
+    "sim-1634",
+    "sim-1681",
+    "sim-1732",
+    "sim-1701",
+    "sim-1766",
+    "sim-1706",
+    "sim-1931",
+    "sim-2014",
+    "sim-2036",
+    "sim-1963",
+    "sim-2004",
+    "sim-2209",
+    "sim-2400",
+    "sim-2603",
+    "sim-2528",
+    "sim-2509",
+    "sim-2616",
+    "sim-2615",
+    "sim-2837",
+    "sim-3105",
+    "sim-3162",
+    "sim-3076",
+    "sim-3083",
+    "sim-3312",
+    "sim-3265",
+    "sim-3303",
+    "sim-3282",
+    "sim-3286",
+    "sim-3430"
+   ],
+   "impact": 43.0,
+   "type": "request",
+   "label": {
+    "majority": "cancel_order",
+    "purity": 0.744
+   },
+   "rank": 34
   },
   {
    "id": 4,
@@ -5892,19 +6440,19 @@
      1
     ],
     "latest": 14,
-    "expected": 8.88,
-    "ratio": 1.58,
-    "p_value": 0.06787326067355054
+    "expected": 9.08,
+    "ratio": 1.54,
+    "p_value": 0.12585536431788172
    },
-   "cohesion": 0.79,
+   "cohesion": 0.789,
    "examples": [
-    {
-     "id": "sim-1401",
-     "text": "where do i check the termination penalty"
-    },
     {
      "id": "sim-792",
      "text": "can i see the early termination fees"
+    },
+    {
+     "id": "sim-1401",
+     "text": "where do i check the termination penalty"
     },
     {
      "id": "sim-452",
@@ -5973,282 +6521,7 @@
     "majority": "check_cancellation_fee",
     "purity": 0.952
    },
-   "rank": 30
-  },
-  {
-   "id": 21,
-   "name": "Create \u00b7 account",
-   "keywords": [
-    "create",
-    "account",
-    "premium",
-    "bloody",
-    "gold",
-    "signup"
-   ],
-   "tickets": 42,
-   "share": 0.0113,
-   "customers": 41,
-   "types": {
-    "bug": 5,
-    "complaint": 0,
-    "request": 0,
-    "how-to": 21,
-    "other": 16
-   },
-   "severity": 0.0,
-   "trend": {
-    "status": "steady",
-    "series": [
-     2,
-     1,
-     0,
-     4,
-     2,
-     1,
-     1,
-     2,
-     3,
-     2,
-     1,
-     2,
-     1,
-     1,
-     1,
-     1,
-     0,
-     2,
-     2,
-     2,
-     0,
-     1,
-     0,
-     2,
-     2,
-     2,
-     1,
-     3
-    ],
-    "latest": 11,
-    "expected": 9.83,
-    "ratio": 1.12,
-    "p_value": 0.3956104619650066
-   },
-   "cohesion": 0.741,
-   "examples": [
-    {
-     "id": "sim-2530",
-     "text": "how can i create a [account type] account"
-    },
-    {
-     "id": "sim-1042",
-     "text": "need to create a [account type] account"
-    },
-    {
-     "id": "sim-2417",
-     "text": "i do not know how i can create a [account category] account"
-    },
-    {
-     "id": "sim-1570",
-     "text": "I do not have a [account category] account yet, help me create one"
-    },
-    {
-     "id": "sim-14",
-     "text": "I want a [account type] account, help me create it"
-    },
-    {
-     "id": "sim-2270",
-     "text": "could you help me create a [account type] account for my daughter?"
-    }
-   ],
-   "ticket_ids": [
-    "sim-109",
-    "sim-14",
-    "sim-165",
-    "sim-427",
-    "sim-439",
-    "sim-514",
-    "sim-417",
-    "sim-659",
-    "sim-669",
-    "sim-747",
-    "sim-874",
-    "sim-985",
-    "sim-1042",
-    "sim-1097",
-    "sim-1118",
-    "sim-1049",
-    "sim-1262",
-    "sim-1296",
-    "sim-1434",
-    "sim-1570",
-    "sim-1517",
-    "sim-1670",
-    "sim-1762",
-    "sim-1908",
-    "sim-2042",
-    "sim-2343",
-    "sim-2270",
-    "sim-2417",
-    "sim-2371",
-    "sim-2530",
-    "sim-2515",
-    "sim-2807",
-    "sim-3158",
-    "sim-3080",
-    "sim-3294",
-    "sim-3277",
-    "sim-3474",
-    "sim-3380",
-    "sim-3587",
-    "sim-3702",
-    "sim-3646",
-    "sim-3708"
-   ],
-   "impact": 42.0,
-   "type": "how-to",
-   "label": {
-    "majority": "create_account",
-    "purity": 0.905
-   },
-   "rank": 31
-  },
-  {
-   "id": 36,
-   "name": "Cancel \u00b7 order",
-   "keywords": [
-    "cancel",
-    "order",
-    "knwo",
-    "account",
-    "don"
-   ],
-   "tickets": 42,
-   "share": 0.0113,
-   "customers": 41,
-   "types": {
-    "bug": 3,
-    "complaint": 0,
-    "request": 38,
-    "how-to": 1,
-    "other": 0
-   },
-   "severity": 0.0,
-   "trend": {
-    "status": "steady",
-    "series": [
-     3,
-     1,
-     2,
-     1,
-     2,
-     0,
-     0,
-     0,
-     0,
-     3,
-     1,
-     0,
-     2,
-     4,
-     1,
-     4,
-     1,
-     0,
-     1,
-     3,
-     2,
-     1,
-     0,
-     4,
-     5,
-     1,
-     0,
-     0
-    ],
-    "latest": 11,
-    "expected": 9.83,
-    "ratio": 1.12,
-    "p_value": 0.3956104619650066
-   },
-   "cohesion": 0.791,
-   "examples": [
-    {
-     "id": "sim-1216",
-     "text": "i do not knwo how to cancel order [order number]"
-    },
-    {
-     "id": "sim-2528",
-     "text": "I do not know how I ca cancel order [order number]"
-    },
-    {
-     "id": "sim-180",
-     "text": "whag do i need to do to cancel order [order number]"
-    },
-    {
-     "id": "sim-3303",
-     "text": "help to cancel order [order number]"
-    },
-    {
-     "id": "sim-1963",
-     "text": "i cannot pay for my last item cancel order [order number]"
-    },
-    {
-     "id": "sim-3286",
-     "text": "i cannot pay for these product how do i cancel the order"
-    }
-   ],
-   "ticket_ids": [
-    "sim-95",
-    "sim-115",
-    "sim-133",
-    "sim-180",
-    "sim-372",
-    "sim-300",
-    "sim-429",
-    "sim-554",
-    "sim-568",
-    "sim-1241",
-    "sim-1216",
-    "sim-1273",
-    "sim-1445",
-    "sim-1634",
-    "sim-1681",
-    "sim-1732",
-    "sim-1701",
-    "sim-1766",
-    "sim-1706",
-    "sim-1931",
-    "sim-2014",
-    "sim-2036",
-    "sim-1963",
-    "sim-2004",
-    "sim-2209",
-    "sim-2400",
-    "sim-2603",
-    "sim-2528",
-    "sim-2509",
-    "sim-2616",
-    "sim-2615",
-    "sim-2837",
-    "sim-3105",
-    "sim-3162",
-    "sim-3076",
-    "sim-3083",
-    "sim-3312",
-    "sim-3265",
-    "sim-3303",
-    "sim-3282",
-    "sim-3286",
-    "sim-3430"
-   ],
-   "impact": 42.0,
-   "type": "request",
-   "label": {
-    "majority": "cancel_order",
-    "purity": 0.738
-   },
-   "rank": 32
+   "rank": 35
   },
   {
    "id": 2,
@@ -6305,23 +6578,15 @@
      1
     ],
     "latest": 12,
-    "expected": 9.2,
-    "ratio": 1.31,
-    "p_value": 0.2163221214588962
+    "expected": 9.41,
+    "ratio": 1.28,
+    "p_value": 0.29060922798694966
    },
    "cohesion": 0.745,
    "examples": [
     {
-     "id": "sim-2024",
-     "text": "where to see the withdrawal charge"
-    },
-    {
-     "id": "sim-11",
-     "text": "how to see the withdrawal fee?"
-    },
-    {
-     "id": "sim-351",
-     "text": "can ushow me the withdrawal penalties"
+     "id": "sim-3416",
+     "text": "I have to see the withdrawal efe"
     },
     {
      "id": "sim-1951",
@@ -6334,6 +6599,14 @@
     {
      "id": "sim-2857",
      "text": "can you help me to see the withdrawal fees?"
+    },
+    {
+     "id": "sim-2099",
+     "text": "I need to see the withdrawal fees"
+    },
+    {
+     "id": "sim-2706",
+     "text": "seeing withdrawal charges"
     }
    ],
    "ticket_ids": [
@@ -6385,147 +6658,147 @@
     "majority": "check_cancellation_fee",
     "purity": 1.0
    },
-   "rank": 33
+   "rank": 36
   },
   {
-   "id": 30,
-   "name": "Key \u00b7 access",
+   "id": 20,
+   "name": "Create \u00b7 account",
    "keywords": [
-    "key",
-    "access",
-    "user",
-    "profile",
-    "retrieve",
-    "recover"
+    "create",
+    "account",
+    "premium",
+    "bloody",
+    "gold",
+    "signup"
    ],
    "tickets": 41,
    "share": 0.011,
-   "customers": 39,
+   "customers": 40,
    "types": {
-    "bug": 2,
+    "bug": 5,
     "complaint": 0,
     "request": 0,
-    "how-to": 15,
-    "other": 24
+    "how-to": 21,
+    "other": 15
    },
    "severity": 0.0,
    "trend": {
     "status": "steady",
     "series": [
-     1,
-     1,
      2,
+     1,
      0,
+     4,
+     1,
+     1,
      1,
      2,
      3,
      2,
      1,
-     1,
      2,
      1,
      1,
-     2,
-     2,
      1,
      1,
+     0,
+     2,
      2,
      2,
      0,
+     1,
      0,
-     1,
-     5,
-     1,
-     1,
+     2,
+     2,
      2,
      1,
-     2
+     3
     ],
-    "latest": 13,
-    "expected": 8.88,
-    "ratio": 1.46,
-    "p_value": 0.11553390817822261
+    "latest": 11,
+    "expected": 9.73,
+    "ratio": 1.13,
+    "p_value": 0.4220164636152495
    },
-   "cohesion": 0.773,
+   "cohesion": 0.745,
    "examples": [
     {
-     "id": "sim-3368",
-     "text": "where do I retrieve my user access key?"
+     "id": "sim-2530",
+     "text": "how can i create a [account type] account"
     },
     {
-     "id": "sim-2963",
-     "text": "i cant restore my key"
+     "id": "sim-1042",
+     "text": "need to create a [account type] account"
     },
     {
-     "id": "sim-1021",
-     "text": "I need helprestoring my user access key"
+     "id": "sim-2417",
+     "text": "i do not know how i can create a [account category] account"
     },
     {
-     "id": "sim-1702",
-     "text": "can you help me resetting the access key of my account?"
+     "id": "sim-1570",
+     "text": "I do not have a [account category] account yet, help me create one"
     },
     {
-     "id": "sim-1528",
-     "text": "give me infrmation about my access key retrieval"
+     "id": "sim-14",
+     "text": "I want a [account type] account, help me create it"
     },
     {
-     "id": "sim-2169",
-     "text": "wanna reset the access key of my account"
+     "id": "sim-2270",
+     "text": "could you help me create a [account type] account for my daughter?"
     }
    ],
    "ticket_ids": [
-    "sim-121",
-    "sim-199",
-    "sim-329",
-    "sim-282",
-    "sim-543",
-    "sim-711",
-    "sim-757",
-    "sim-816",
-    "sim-865",
-    "sim-896",
-    "sim-1021",
-    "sim-945",
-    "sim-1059",
-    "sim-1222",
-    "sim-1426",
-    "sim-1395",
-    "sim-1528",
-    "sim-1613",
-    "sim-1702",
-    "sim-1801",
-    "sim-1830",
-    "sim-1847",
-    "sim-2006",
-    "sim-2169",
-    "sim-2269",
-    "sim-2337",
-    "sim-2386",
-    "sim-2449",
-    "sim-2781",
-    "sim-2939",
-    "sim-2963",
-    "sim-3011",
-    "sim-2960",
-    "sim-3007",
-    "sim-3106",
-    "sim-3345",
-    "sim-3425",
-    "sim-3368",
-    "sim-3583",
-    "sim-3661",
-    "sim-3597"
+    "sim-109",
+    "sim-14",
+    "sim-165",
+    "sim-427",
+    "sim-439",
+    "sim-514",
+    "sim-417",
+    "sim-659",
+    "sim-747",
+    "sim-874",
+    "sim-985",
+    "sim-1042",
+    "sim-1097",
+    "sim-1118",
+    "sim-1049",
+    "sim-1262",
+    "sim-1296",
+    "sim-1434",
+    "sim-1570",
+    "sim-1517",
+    "sim-1670",
+    "sim-1762",
+    "sim-1908",
+    "sim-2042",
+    "sim-2343",
+    "sim-2270",
+    "sim-2417",
+    "sim-2371",
+    "sim-2530",
+    "sim-2515",
+    "sim-2807",
+    "sim-3158",
+    "sim-3080",
+    "sim-3294",
+    "sim-3277",
+    "sim-3474",
+    "sim-3380",
+    "sim-3587",
+    "sim-3702",
+    "sim-3646",
+    "sim-3708"
    ],
    "impact": 41.0,
    "type": "how-to",
    "label": {
-    "majority": "recover_password",
-    "purity": 1.0
+    "majority": "create_account",
+    "purity": 0.902
    },
-   "rank": 34
+   "rank": 37
   },
   {
-   "id": 44,
+   "id": 48,
    "name": "Subscription \u00b7 newsletter",
    "keywords": [
     "subscription",
@@ -6535,13 +6808,13 @@
     "tell",
     "ur"
    ],
-   "tickets": 40,
-   "share": 0.0108,
-   "customers": 39,
+   "tickets": 41,
+   "share": 0.011,
+   "customers": 40,
    "types": {
     "bug": 1,
     "complaint": 0,
-    "request": 28,
+    "request": 29,
     "how-to": 9,
     "other": 2
    },
@@ -6557,7 +6830,7 @@
      2,
      1,
      1,
-     0,
+     1,
      0,
      0,
      2,
@@ -6579,11 +6852,11 @@
      2
     ],
     "latest": 11,
-    "expected": 9.2,
-    "ratio": 1.2,
-    "p_value": 0.31738367882628443
+    "expected": 9.73,
+    "ratio": 1.13,
+    "p_value": 0.4220164636152495
    },
-   "cohesion": 0.834,
+   "cohesion": 0.833,
    "examples": [
     {
      "id": "sim-1713",
@@ -6594,7 +6867,7 @@
      "text": "can you help me to cancel the newsletter subscription?"
     },
     {
-     "id": "sim-440",
+     "id": "sim-3104",
      "text": "assistance to cancel my newsletter subscription"
     },
     {
@@ -6626,6 +6899,7 @@
     "sim-728",
     "sim-800",
     "sim-1006",
+    "sim-1107",
     "sim-1473",
     "sim-1515",
     "sim-1612",
@@ -6652,16 +6926,16 @@
     "sim-3707",
     "sim-3673"
    ],
-   "impact": 40.0,
+   "impact": 41.0,
    "type": "request",
    "label": {
     "majority": "newsletter_subscription",
     "purity": 1.0
    },
-   "rank": 35
+   "rank": 38
   },
   {
-   "id": 22,
+   "id": 21,
    "name": "Platinum \u00b7 account",
    "keywords": [
     "platinum",
@@ -6715,9 +6989,9 @@
      1
     ],
     "latest": 13,
-    "expected": 8.24,
-    "ratio": 1.58,
-    "p_value": 0.07625767393251
+    "expected": 8.43,
+    "ratio": 1.54,
+    "p_value": 0.13696288885574273
    },
    "cohesion": 0.818,
    "examples": [
@@ -6793,7 +7067,7 @@
     "majority": "create_account",
     "purity": 0.359
    },
-   "rank": 36
+   "rank": 39
   },
   {
    "id": 11,
@@ -6803,16 +7077,17 @@
     "account",
     "daughter",
     "wife",
-    "signup"
+    "signup",
+    "acount"
    ],
-   "tickets": 38,
-   "share": 0.0102,
-   "customers": 38,
+   "tickets": 36,
+   "share": 0.0097,
+   "customers": 36,
    "types": {
     "bug": 6,
     "complaint": 0,
     "request": 0,
-    "how-to": 14,
+    "how-to": 12,
     "other": 18
    },
    "severity": 0.0,
@@ -6837,7 +7112,7 @@
      2,
      2,
      1,
-     4,
+     3,
      0,
      0,
      1,
@@ -6846,14 +7121,14 @@
      2,
      1,
      2,
-     2
+     1
     ],
-    "latest": 11,
-    "expected": 8.56,
-    "ratio": 1.28,
-    "p_value": 0.24340478054633402
+    "latest": 10,
+    "expected": 8.43,
+    "ratio": 1.19,
+    "p_value": 0.38387713534926604
    },
-   "cohesion": 0.755,
+   "cohesion": 0.763,
    "examples": [
     {
      "id": "sim-734",
@@ -6864,8 +7139,8 @@
      "text": "help me to open a [account type] account"
     },
     {
-     "id": "sim-3373",
-     "text": "open a [account type] acocunt"
+     "id": "sim-3573",
+     "text": "open a [account category] acocunt"
     },
     {
      "id": "sim-2120",
@@ -6904,7 +7179,6 @@
     "sim-2120",
     "sim-2180",
     "sim-2316",
-    "sim-2359",
     "sim-2467",
     "sim-2432",
     "sim-2437",
@@ -6917,19 +7191,18 @@
     "sim-3373",
     "sim-3575",
     "sim-3573",
-    "sim-3633",
-    "sim-3632"
+    "sim-3633"
    ],
-   "impact": 38.0,
+   "impact": 36.0,
    "type": "how-to",
    "label": {
     "majority": "create_account",
-    "purity": 0.842
+    "purity": 0.833
    },
-   "rank": 37
+   "rank": 40
   },
   {
-   "id": 31,
+   "id": 35,
    "name": "Canceling \u00b7 purchase",
    "keywords": [
     "canceling",
@@ -6981,9 +7254,9 @@
      0
     ],
     "latest": 7,
-    "expected": 8.88,
-    "ratio": 0.79,
-    "p_value": 0.33837156483378983
+    "expected": 9.08,
+    "ratio": 0.77,
+    "p_value": 0.3475971402661476
    },
    "cohesion": 0.815,
    "examples": [
@@ -7055,138 +7328,139 @@
     "majority": "cancel_order",
     "purity": 0.914
    },
-   "rank": 38
+   "rank": 41
   },
   {
-   "id": 17,
-   "name": "Data \u00b7 account",
+   "id": 24,
+   "name": "Pro account",
    "keywords": [
-    "data",
-    "account",
-    "edit",
-    "gold",
+    "pro account",
+    "opening pro",
+    "changing pro",
+    "use pro",
     "editing",
-    "correct"
+    "information"
    ],
-   "tickets": 32,
-   "share": 0.0086,
-   "customers": 32,
+   "tickets": 33,
+   "share": 0.0089,
+   "customers": 33,
    "types": {
     "bug": 0,
     "complaint": 0,
-    "request": 13,
-    "how-to": 2,
-    "other": 17
+    "request": 5,
+    "how-to": 13,
+    "other": 15
    },
    "severity": 0.0,
    "trend": {
     "status": "steady",
     "series": [
-     2,
-     0,
-     2,
-     1,
-     1,
-     1,
      3,
+     3,
+     5,
+     0,
+     2,
+     0,
+     0,
      1,
-     1,
+     0,
      2,
      1,
-     1,
-     1,
-     1,
      0,
      0,
      1,
      0,
-     3,
      1,
      1,
      1,
      4,
-     0,
-     0,
+     1,
      2,
+     1,
+     0,
+     1,
+     2,
+     0,
      0,
      1
     ],
-    "latest": 8,
-    "expected": 7.61,
-    "ratio": 1.05,
-    "p_value": 0.4913763252368079
+    "latest": 5,
+    "expected": 9.08,
+    "ratio": 0.55,
+    "p_value": 0.14678718207959884
    },
-   "cohesion": 0.705,
+   "cohesion": 0.794,
    "examples": [
     {
-     "id": "sim-806",
-     "text": "modiby data on [account type] account"
+     "id": "sim-3324",
+     "text": "clsoe pro account"
     },
     {
-     "id": "sim-1175",
-     "text": "edit data on [account type] account"
+     "id": "sim-319",
+     "text": "how can I find information about openinga pro account?"
     },
     {
-     "id": "sim-3711",
-     "text": "editing data on [account category] account"
+     "id": "sim-279",
+     "text": "editing informaqtion on pro account"
     },
     {
-     "id": "sim-306",
-     "text": "updating data on [account type] account"
+     "id": "sim-2150",
+     "text": "how to use the pro account"
     },
     {
-     "id": "sim-3370",
-     "text": "correct data on [account category] account"
+     "id": "sim-608",
+     "text": "how can I get infomation about my pro account cancellation?"
     },
     {
-     "id": "sim-1736",
-     "text": "modify data on [account type] account"
+     "id": "sim-2554",
+     "text": "new pro account"
     }
    ],
    "ticket_ids": [
-    "sim-131",
-    "sim-45",
-    "sim-362",
-    "sim-306",
-    "sim-451",
-    "sim-636",
-    "sim-764",
-    "sim-806",
-    "sim-831",
-    "sim-814",
+    "sim-127",
+    "sim-111",
+    "sim-92",
+    "sim-160",
+    "sim-241",
+    "sim-205",
+    "sim-319",
+    "sim-348",
+    "sim-279",
+    "sim-285",
+    "sim-368",
+    "sim-608",
+    "sim-669",
     "sim-1033",
-    "sim-1175",
-    "sim-1225",
-    "sim-1305",
-    "sim-1420",
-    "sim-1541",
-    "sim-1616",
-    "sim-1736",
-    "sim-2156",
-    "sim-2428",
-    "sim-2423",
-    "sim-2466",
-    "sim-2507",
-    "sim-2698",
-    "sim-2853",
-    "sim-2962",
-    "sim-3024",
-    "sim-3029",
-    "sim-2955",
-    "sim-3411",
-    "sim-3370",
-    "sim-3711"
+    "sim-1249",
+    "sim-1233",
+    "sim-1430",
+    "sim-1805",
+    "sim-1982",
+    "sim-2150",
+    "sim-2312",
+    "sim-2359",
+    "sim-2486",
+    "sim-2459",
+    "sim-2378",
+    "sim-2554",
+    "sim-2752",
+    "sim-2707",
+    "sim-2858",
+    "sim-3144",
+    "sim-3320",
+    "sim-3324",
+    "sim-3632"
    ],
-   "impact": 32.0,
-   "type": "request",
+   "impact": 33.0,
+   "type": "how-to",
    "label": {
-    "majority": "edit_account",
-    "purity": 1.0
+    "majority": "create_account",
+    "purity": 0.303
    },
-   "rank": 39
+   "rank": 42
   },
   {
-   "id": 39,
+   "id": 45,
    "name": "Look \u00b7 quick",
    "keywords": [
     "look",
@@ -7238,35 +7512,35 @@
      0
     ],
     "latest": 6,
-    "expected": 8.24,
-    "ratio": 0.73,
-    "p_value": 0.28450055065904517
+    "expected": 8.43,
+    "ratio": 0.71,
+    "p_value": 0.30047753381808984
    },
-   "cohesion": 0.857,
+   "cohesion": 0.856,
    "examples": [
     {
      "id": "sim-770",
-     "text": "help me to take a quick look at my invoice #[number]"
+     "text": "help me to take a quick look at my invoice [number]"
     },
     {
      "id": "sim-3057",
-     "text": "I do not know how to give a quick look at the invoice #[number]"
+     "text": "I do not know how to give a quick look at the invoice [number]"
     },
     {
      "id": "sim-854",
-     "text": "I need help taking a quick look at invoice #[number]"
+     "text": "I need help taking a quick look at invoice [number]"
     },
     {
      "id": "sim-3031",
-     "text": "can uhelp me take a quick look at my invoice #[number]"
+     "text": "can uhelp me take a quick look at my invoice [number]"
     },
     {
      "id": "sim-595",
-     "text": "want help giving a quick look at my invoice #[number]"
+     "text": "want help giving a quick look at my invoice [number]"
     },
     {
      "id": "sim-1695",
-     "text": "where can I look for the invoice #[number]?"
+     "text": "where can I look for the invoice [number]?"
     }
    ],
    "ticket_ids": [
@@ -7309,137 +7583,137 @@
     "majority": "check_invoice",
     "purity": 1.0
    },
-   "rank": 40
+   "rank": 43
   },
   {
-   "id": 27,
-   "name": "Opening \u00b7 account",
+   "id": 16,
+   "name": "Data \u00b7 account",
    "keywords": [
-    "opening",
+    "data",
     "account",
-    "information",
-    "accounts",
-    "daughter",
-    "dad"
+    "edit",
+    "gold",
+    "correct",
+    "modify"
    ],
    "tickets": 31,
    "share": 0.0083,
    "customers": 31,
    "types": {
-    "bug": 2,
+    "bug": 0,
     "complaint": 0,
-    "request": 0,
-    "how-to": 11,
-    "other": 18
+    "request": 13,
+    "how-to": 2,
+    "other": 16
    },
    "severity": 0.0,
    "trend": {
     "status": "steady",
     "series": [
-     1,
-     1,
-     2,
-     1,
-     2,
-     2,
      2,
      0,
+     2,
+     1,
+     1,
      1,
      3,
-     2,
-     1,
-     0,
-     0,
-     0,
-     1,
      0,
      1,
      2,
      1,
-     2,
      1,
+     1,
+     1,
+     0,
+     0,
+     1,
+     0,
+     3,
+     1,
+     1,
+     1,
+     4,
+     0,
      0,
      2,
      0,
-     1,
-     1,
      1
     ],
-    "latest": 6,
-    "expected": 7.93,
-    "ratio": 0.76,
-    "p_value": 0.32239269977544227
+    "latest": 8,
+    "expected": 7.46,
+    "ratio": 1.07,
+    "p_value": 0.5008146303210427
    },
-   "cohesion": 0.752,
+   "cohesion": 0.709,
    "examples": [
     {
-     "id": "sim-602",
-     "text": "find information about opening a [account type] account"
+     "id": "sim-806",
+     "text": "modiby data on [account type] account"
     },
     {
-     "id": "sim-88",
-     "text": "I want information about opening [account category] accounts"
+     "id": "sim-1175",
+     "text": "edit data on [account type] account"
     },
     {
-     "id": "sim-3624",
-     "text": "I want to know more about opening a [account type] account"
+     "id": "sim-3711",
+     "text": "editing data on [account category] account"
     },
     {
-     "id": "sim-2811",
-     "text": "question about opening a [account type] account"
+     "id": "sim-306",
+     "text": "updating data on [account type] account"
     },
     {
-     "id": "sim-2369",
-     "text": "want help opening a [account category] account"
+     "id": "sim-3370",
+     "text": "correct data on [account category] account"
     },
     {
-     "id": "sim-536",
-     "text": "I want information about opening a standard account"
+     "id": "sim-1736",
+     "text": "modify data on [account type] account"
     }
    ],
    "ticket_ids": [
-    "sim-88",
-    "sim-202",
-    "sim-368",
-    "sim-377",
-    "sim-396",
-    "sim-536",
-    "sim-602",
-    "sim-672",
-    "sim-689",
-    "sim-859",
-    "sim-909",
-    "sim-1138",
-    "sim-1294",
-    "sim-1280",
-    "sim-1258",
-    "sim-1337",
-    "sim-1341",
-    "sim-1464",
-    "sim-1949",
-    "sim-2257",
-    "sim-2369",
-    "sim-2378",
-    "sim-2573",
-    "sim-2752",
-    "sim-2636",
-    "sim-2811",
-    "sim-3140",
-    "sim-3130",
-    "sim-3384",
-    "sim-3485",
-    "sim-3624"
+    "sim-131",
+    "sim-45",
+    "sim-362",
+    "sim-306",
+    "sim-451",
+    "sim-636",
+    "sim-764",
+    "sim-806",
+    "sim-831",
+    "sim-814",
+    "sim-1175",
+    "sim-1225",
+    "sim-1305",
+    "sim-1420",
+    "sim-1541",
+    "sim-1616",
+    "sim-1736",
+    "sim-2156",
+    "sim-2428",
+    "sim-2423",
+    "sim-2466",
+    "sim-2507",
+    "sim-2698",
+    "sim-2853",
+    "sim-2962",
+    "sim-3024",
+    "sim-3029",
+    "sim-2955",
+    "sim-3411",
+    "sim-3370",
+    "sim-3711"
    ],
    "impact": 31.0,
-   "type": "how-to",
+   "type": "request",
    "label": {
-    "majority": "create_account",
-    "purity": 0.935
+    "majority": "edit_account",
+    "purity": 1.0
    },
-   "rank": 41
+   "rank": 44
   },
   {
-   "id": 20,
+   "id": 19,
    "name": "Freemium \u00b7 account",
    "keywords": [
     "freemium",
@@ -7492,11 +7766,11 @@
      4
     ],
     "latest": 8,
-    "expected": 6.98,
-    "ratio": 1.15,
-    "p_value": 0.39765200190243366
+    "expected": 7.14,
+    "ratio": 1.12,
+    "p_value": 0.45962894935104825
    },
-   "cohesion": 0.824,
+   "cohesion": 0.825,
    "examples": [
     {
      "id": "sim-2656",
@@ -7507,20 +7781,20 @@
      "text": "switch to freemium account"
     },
     {
-     "id": "sim-323",
-     "text": "modifu details on freemium account"
-    },
-    {
      "id": "sim-623",
      "text": "correcting infornation on freemium account"
     },
     {
-     "id": "sim-1123",
-     "text": "changing info on freemium account"
+     "id": "sim-323",
+     "text": "modifu details on freemium account"
     },
     {
      "id": "sim-1322",
      "text": "problems with freemium account removals"
+    },
+    {
+     "id": "sim-1123",
+     "text": "changing info on freemium account"
     }
    ],
    "ticket_ids": [
@@ -7561,7 +7835,131 @@
     "majority": "delete_account",
     "purity": 0.333
    },
-   "rank": 42
+   "rank": 45
+  },
+  {
+   "id": 31,
+   "name": "Opening \u00b7 account",
+   "keywords": [
+    "opening",
+    "account",
+    "information",
+    "accounts",
+    "dad",
+    "new"
+   ],
+   "tickets": 28,
+   "share": 0.0075,
+   "customers": 28,
+   "types": {
+    "bug": 2,
+    "complaint": 0,
+    "request": 0,
+    "how-to": 10,
+    "other": 16
+   },
+   "severity": 0.0,
+   "trend": {
+    "status": "steady",
+    "series": [
+     1,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     0,
+     1,
+     3,
+     2,
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     2,
+     0,
+     1,
+     1,
+     1
+    ],
+    "latest": 6,
+    "expected": 7.14,
+    "ratio": 0.84,
+    "p_value": 0.4526526298380781
+   },
+   "cohesion": 0.769,
+   "examples": [
+    {
+     "id": "sim-602",
+     "text": "find information about opening a [account type] account"
+    },
+    {
+     "id": "sim-88",
+     "text": "I want information about opening [account category] accounts"
+    },
+    {
+     "id": "sim-3624",
+     "text": "I want to know more about opening a [account type] account"
+    },
+    {
+     "id": "sim-2811",
+     "text": "question about opening a [account type] account"
+    },
+    {
+     "id": "sim-3130",
+     "text": "I want help opening a [account category] account"
+    },
+    {
+     "id": "sim-536",
+     "text": "I want information about opening a standard account"
+    }
+   ],
+   "ticket_ids": [
+    "sim-88",
+    "sim-202",
+    "sim-377",
+    "sim-396",
+    "sim-536",
+    "sim-602",
+    "sim-672",
+    "sim-689",
+    "sim-859",
+    "sim-909",
+    "sim-1138",
+    "sim-1294",
+    "sim-1280",
+    "sim-1258",
+    "sim-1337",
+    "sim-1341",
+    "sim-1464",
+    "sim-1949",
+    "sim-2257",
+    "sim-2369",
+    "sim-2573",
+    "sim-2636",
+    "sim-2811",
+    "sim-3140",
+    "sim-3130",
+    "sim-3384",
+    "sim-3485",
+    "sim-3624"
+   ],
+   "impact": 28.0,
+   "type": "how-to",
+   "label": {
+    "majority": "create_account",
+    "purity": 0.929
+   },
+   "rank": 46
   },
   {
    "id": 13,
@@ -7572,14 +7970,14 @@
     "order",
     "ur"
    ],
-   "tickets": 28,
-   "share": 0.0075,
-   "customers": 28,
+   "tickets": 27,
+   "share": 0.0073,
+   "customers": 27,
    "types": {
     "bug": 0,
     "complaint": 0,
     "request": 0,
-    "how-to": 22,
+    "how-to": 21,
     "other": 6
    },
    "severity": 0.0,
@@ -7591,7 +7989,7 @@
      1,
      0,
      2,
-     3,
+     2,
      1,
      0,
      0,
@@ -7616,11 +8014,11 @@
      2
     ],
     "latest": 6,
-    "expected": 6.98,
-    "ratio": 0.86,
-    "p_value": 0.45335156441719027
+    "expected": 6.81,
+    "ratio": 0.88,
+    "p_value": 0.49553917578469053
    },
-   "cohesion": 0.669,
+   "cohesion": 0.68,
    "examples": [
     {
      "id": "sim-303",
@@ -7652,7 +8050,6 @@
     "sim-303",
     "sim-552",
     "sim-663",
-    "sim-710",
     "sim-797",
     "sim-679",
     "sim-885",
@@ -7677,13 +8074,13 @@
     "sim-3718",
     "sim-3678"
    ],
-   "impact": 28.0,
+   "impact": 27.0,
    "type": "how-to",
    "label": {
     "majority": "delivery_options",
-    "purity": 0.571
+    "purity": 0.593
    },
-   "rank": 43
+   "rank": 47
   },
   {
    "id": 14,
@@ -7696,14 +8093,14 @@
     "problems",
     "issues"
    ],
-   "tickets": 25,
-   "share": 0.0067,
-   "customers": 25,
+   "tickets": 24,
+   "share": 0.0065,
+   "customers": 24,
    "types": {
     "bug": 3,
     "complaint": 0,
     "request": 0,
-    "how-to": 6,
+    "how-to": 5,
     "other": 16
    },
    "severity": 0.0,
@@ -7733,18 +8130,18 @@
      1,
      1,
      0,
-     2,
+     1,
      0,
      1,
      1,
      1
     ],
-    "latest": 6,
-    "expected": 6.02,
-    "ratio": 1.0,
-    "p_value": 0.5582299906486998
+    "latest": 5,
+    "expected": 6.16,
+    "ratio": 0.81,
+    "p_value": 0.445061547252417
    },
-   "cohesion": 0.798,
+   "cohesion": 0.802,
    "examples": [
     {
      "id": "sim-424",
@@ -7793,18 +8190,17 @@
     "sim-2671",
     "sim-2820",
     "sim-3147",
-    "sim-3144",
     "sim-3467",
     "sim-3482",
     "sim-3595"
    ],
-   "impact": 25.0,
+   "impact": 24.0,
    "type": "how-to",
    "label": {
     "majority": "create_account",
-    "purity": 0.84
+    "purity": 0.833
    },
-   "rank": 44
+   "rank": 48
   },
   {
    "id": 5,
@@ -7861,9 +8257,9 @@
      1
     ],
     "latest": 6,
-    "expected": 4.44,
-    "ratio": 1.35,
-    "p_value": 0.2866900954743711
+    "expected": 4.54,
+    "ratio": 1.32,
+    "p_value": 0.3622607849070242
    },
    "cohesion": 0.866,
    "examples": [
@@ -7920,7 +8316,7 @@
     "majority": "check_cancellation_fee",
     "purity": 1.0
    },
-   "rank": 45
+   "rank": 49
   }
  ],
  "unsorted_examples": [

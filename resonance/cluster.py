@@ -57,8 +57,10 @@ def cluster(
     threshold: float = ASSIGN_THRESHOLD,
 ) -> Clustering:
     n = len(X)
-    if n < 3:
-        return Clustering(np.zeros(n, dtype=int), X[:1].copy() if n else X, np.ones(n), "single")
+    if n < 3 or not np.any(X):
+        # Too few tickets to group, or nothing left to compare after cleaning: one topic.
+        C = X.mean(axis=0, keepdims=True) if n else X
+        return Clustering(np.zeros(n, dtype=int), C, np.ones(n), "single")
 
     if k is not None:
         # Explicit number of topics: k-means, every ticket assigned.
@@ -72,6 +74,9 @@ def cluster(
     idx = rng.choice(n, size=min(DISCOVERY_SAMPLE, n), replace=False)
     S = X[idx]
     min_size = max(5, int(len(S) * min_topic_share))
+    if n < 2 * min_size:
+        # Too few tickets for density-based discovery: a couple of k-means topics.
+        return cluster(X, k=max(1, min(int(np.sqrt(n / 2)), n - 1)), seed=seed)
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", FutureWarning)
         found = HDBSCAN(min_cluster_size=min_size, copy=True).fit_predict(S)

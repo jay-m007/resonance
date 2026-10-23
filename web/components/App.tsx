@@ -32,7 +32,17 @@ export function App() {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const url = params.has("demo") ? "demo/report.json" : params.get("report") ?? "data/report.json";
+    const asked = params.get("report");
+    // Only reports on this site: a link to someone else's file could make their text look like ours.
+    const sameSite = (u: string) => {
+      try {
+        return new URL(u, window.location.href).origin === window.location.origin;
+      } catch {
+        return false;
+      }
+    };
+    if (asked && !sameSite(asked)) setError("Reports can only be loaded from this site. Download the file and open it instead.");
+    const url = params.has("demo") ? "demo/report.json" : asked && sameSite(asked) ? asked : "data/report.json";
     fetch(url)
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => d && accept(d, url))

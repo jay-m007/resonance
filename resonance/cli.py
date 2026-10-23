@@ -47,6 +47,10 @@ def main(argv: list[str] | None = None) -> int:
     a.add_argument("--time-col", help="name of the column holding the creation time")
     a.add_argument("--customer-col", help="name of the column identifying the customer")
     a.add_argument("--limit", type=int, help="only read the first N tickets")
+    order = a.add_mutually_exclusive_group()
+    order.add_argument("--dayfirst", action="store_true", help="dates like 03/04/2026 mean 3 April")
+    order.add_argument("--monthfirst", action="store_true", help="dates like 03/04/2026 mean March 4")
+    a.add_argument("--encoding", help="file encoding, if it isn't detected (e.g. cp1252)")
     a.add_argument("--show", type=int, default=15, help="issues to print (default 15)")
     a.add_argument("--seed", type=int, default=0)
     a.add_argument("--synthetic", action="store_true", help="mark the report as made from simulated data (shown as a notice in the dashboard)")
@@ -77,10 +81,21 @@ def main(argv: list[str] | None = None) -> int:
     f = sub.add_parser("fetch-data", help="download the Bitext customer-support dataset (26,872 labelled messages, CDLA-Sharing 1.0)")
     f.add_argument("-o", "--out", default="data/bitext.csv")
 
+    # Windows consoles with a legacy code page can't print every character (arrows, emoji in
+    # customer messages); replace those instead of crashing after the report is written.
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(errors="replace")  # type: ignore[attr-defined]
+        except (AttributeError, ValueError):
+            pass
     args = p.parse_args(argv)
     try:
         if args.cmd == "analyze":
-            tickets = load_tickets(args.input, text_col=args.text_col, time_col=args.time_col, customer_col=args.customer_col, limit=args.limit)
+            dayfirst = True if args.dayfirst else False if args.monthfirst else None
+            tickets = load_tickets(args.input, text_col=args.text_col, time_col=args.time_col, customer_col=args.customer_col, limit=args.limit, dayfirst=dayfirst, encoding=args.encoding)
+            st = tickets.stats
+            if st.dates_failed:
+                print(f"Note: {st.dates_failed:,} of {st.dates_found + st.dates_failed:,} dates in column {st.columns['time']!r} couldn't be read; those tickets have no date.", file=sys.stderr)
             report = analyze(tickets, backend=args.embed, k=args.k, seed=args.seed)
             if args.synthetic:
                 report["meta"]["synthetic"] = True
@@ -119,9 +134,9 @@ def main(argv: list[str] | None = None) -> int:
         if args.cmd == "brief":
             from .brief import add_briefs
 
-            report = json.loads(Path(args.report).read_text(encoding="utf-8"))
-            n = add_briefs(report, top=args.top, model=args.model, base_url=args.base_url)
-            Path(args.report).write_text(json.dumps(report, indent=1), encoding="utf-8")
+            report = json.loads(Path(args.report).read_text(encoding="utf-8-sig"))
+            save = lambda: Path(args.report).write_text(json.dumps(report, indent=1), encoding="utf-8")
+            n = add_briefs(report, top=args.top, model=args.model, base_url=args.base_url, on_each=save)
             print(f"Added {n} AI-written briefs to {args.report}. Open it in the dashboard to read them; check them before acting.")
             return 0
         if args.cmd == "fetch-data":
@@ -131,7 +146,7 @@ def main(argv: list[str] | None = None) -> int:
             urllib.request.urlretrieve(BITEXT_URL, out)
             print(f"Done ({out.stat().st_size / 1e6:.1f} MB). License: Community Data License Agreement – Sharing 1.0 (see the Bitext repository).")
             return 0
-    except (IngestError, ValueError, RuntimeError) as e:
+    except (IngestError, ValueError, RuntimeError, OSError) as e:
         print(f"Error: {e}", file=sys.stderr)
         return 2
     return 1

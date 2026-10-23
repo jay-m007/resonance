@@ -7,8 +7,12 @@ is its earlier count times the *median* growth across all topics, so a busy
 week for everyone isn't mistaken for a spike, and one topic spiking doesn't
 make all the others look like they're falling (as scaling by the total would).
 
-The observed count is compared with that expectation using a Poisson test:
-how likely is a count at least this large by chance? Because dozens of topics
+The test is a conditional binomial test. If nothing changed, each of a topic's
+n = recent + earlier tickets falls in the recent window with probability
+scale / (1 + scale), so the recent count follows Binomial(n, that probability).
+This accounts for the earlier count being random too (a first version treated
+it as an exact rate, a Poisson test, and raised far too many false alarms on
+small topics). Because dozens of topics
 are tested at once, the p-values are corrected with the Benjamini-Hochberg
 procedure (false discovery rate FDR = 5%): of the topics flagged, at most
 about 5% are expected to be false alarms. A topic is flagged as rising only if
@@ -22,9 +26,12 @@ from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 
 import numpy as np
-from scipy.stats import poisson
+from scipy.stats import binom
 
 MIN_COUNT = 5
+#: A topic needs this many earlier tickets before it can be called rising or falling;
+#: with fewer, its "normal" level is too uncertain to compare against.
+MIN_EARLIER = 10
 MIN_RATIO = 1.5
 FDR = 0.05
 
@@ -95,7 +102,7 @@ def trends(labels: np.ndarray, times: list[datetime | None], n_topics: int) -> t
     last_total = totals[-window:].sum()
     earlier_total = totals[:-window].sum()
     all_series = [np.bincount(b[(labels == j) & (b >= 0)], minlength=n_periods) for j in range(n_topics)]
-    growth = [s[-window:].sum() / s[:-window].sum() for s in all_series if s[:-window].sum() >= MIN_COUNT]
+    growth = [s[-window:].sum() / s[:-window].sum() for s in all_series if s[:-window].sum() >= 20]
     scale = float(np.median(growth)) if growth else (last_total / earlier_total if earlier_total else 0.0)
     out: list[Trend] = []
     p_up = np.ones(n_topics)
@@ -110,9 +117,12 @@ def trends(labels: np.ndarray, times: list[datetime | None], n_topics: int) -> t
             t.status = "new"
         elif expected > 0:
             t.ratio = round(latest / expected, 2)
-            p_up[j] = float(poisson.sf(latest - 1, expected))  # P(X >= latest)
-            p_down[j] = float(poisson.cdf(latest, expected))  # P(X <= latest)
-            t.p_value = float(min(p_up[j], p_down[j]))
+            if earlier >= MIN_EARLIER:
+                n = latest + earlier
+                share = scale / (1 + scale)
+                p_up[j] = float(binom.sf(latest - 1, n, share))  # P(recent >= latest)
+                p_down[j] = float(binom.cdf(latest, n, share))  # P(recent <= latest)
+                t.p_value = float(min(p_up[j], p_down[j]))
         out.append(t)
 
     up_ok = benjamini_hochberg(p_up, FDR)

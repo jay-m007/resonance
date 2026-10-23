@@ -11,12 +11,22 @@ const TYPES: IssueType[] = ["bug", "complaint", "request", "how-to", "other"];
 /** Everything about one issue: its trend, what kinds of tickets it holds, and what customers actually wrote. */
 export function Detail({ issue, report, onClose }: { issue: Issue; report: Report; onClose: () => void }) {
   const ref = useRef<HTMLElement>(null);
+  const close = useRef(onClose);
+  close.current = onClose;
+  // Move focus into the panel when a different issue opens, and give it back when the panel closes.
+  // Depends only on the issue, so typing in the search box doesn't pull focus away.
   useEffect(() => {
+    const opener = document.activeElement as HTMLElement | null;
     ref.current?.focus();
-    const esc = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    return () => {
+      if (opener && document.contains(opener)) opener.focus();
+    };
+  }, [issue.id]);
+  useEffect(() => {
+    const esc = (e: KeyboardEvent) => e.key === "Escape" && close.current();
     window.addEventListener("keydown", esc);
     return () => window.removeEventListener("keydown", esc);
-  }, [issue.id, onClose]);
+  }, []);
   const totalTyped = TYPES.reduce((a, t) => a + (issue.types[t] ?? 0), 0) || 1;
 
   return (

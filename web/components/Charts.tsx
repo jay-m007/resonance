@@ -27,7 +27,7 @@ export function Spark({ series, recent, label }: { series: number[]; recent: num
 /**
  * Volume over time for one issue: bars per period, the recent window
  * highlighted, and a dashed line at the level expected from the earlier
- * periods (expected ÷ window, per period). Hover or focus a bar for its value.
+ * periods (expected ÷ window, per period). Hover a bar for its value; the legend and the detail text carry the same information for keyboard and screen-reader users.
  */
 export function VolumeChart(props: { series: number[]; starts: string[]; unit: "day" | "week"; recent: number; expected: number; height?: number }) {
   const { series, starts, unit, recent } = props;
