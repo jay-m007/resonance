@@ -13,6 +13,8 @@ from sklearn.feature_extraction.text import CountVectorizer, ENGLISH_STOP_WORDS
 SUPPORT_STOP = set(
     "help need want like know trying try tried please thanks thank hi hello hey just able way get got make really ".split()
     + "assist assistance support customer service question questions problem issue could would can will".split()
+    # Leftovers of contractions ("don't" -> "don", "isn't" -> "isn") are not topic words.
+    + "don doesn didn isn wasn aren weren won wouldn couldn shouldn haven hasn ll ve re im".split()
 )
 STOP = list(ENGLISH_STOP_WORDS | SUPPORT_STOP)
 
