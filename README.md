@@ -37,13 +37,16 @@ Resonance v0.1.0: 3,719 tickets, 2026-09-01 to 2026-09-28, 4.6 s
 ```bash
 git clone https://github.com/jay-m007/resonance.git
 cd resonance
-pip install -e ".[dev]"
+python -m pip install --upgrade pip      # editable installs need pip 21.3 or newer
+python -m pip install -e ".[dev]"
 pytest                                                         # 22 tests
 
 resonance fetch-data                                           # 26,872 labelled support messages (Bitext, CDLA-Sharing 1.0)
 resonance simulate data/bitext.csv --spike payment_issue      # a simulated month where payment problems triple in week 4
 resonance analyze simulated-tickets.csv -o report.json         # find and rank the issues
 ```
+
+On Windows, if `resonance` or `pytest` is "not recognized", Python's Scripts folder isn't on your PATH: use `python -m resonance ...` and `python -m pytest` instead, which work the same.
 
 On your own data: export tickets from your help desk as CSV, JSON or JSON Lines and run `resonance analyze export.csv`. Columns are found by name (`text`/`message`/`body`/`description`…, `created_at`/`date`/`timestamp`…, `customer_id`/`account`…), or set them with `--text-col`, `--time-col`, `--customer-col`.
 
