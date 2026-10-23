@@ -38,7 +38,7 @@ Resonance v0.1.0: 3,719 tickets, 2026-09-01 to 2026-09-28, 4.6 s
 git clone https://github.com/jay-m007/resonance.git
 cd resonance
 pip install -e ".[dev]"
-pytest
+pytest                                                         # 22 tests
 
 resonance fetch-data                                           # 26,872 labelled support messages (Bitext, CDLA-Sharing 1.0)
 resonance simulate data/bitext.csv --spike payment_issue      # a simulated month where payment problems triple in week 4
@@ -68,15 +68,15 @@ resonance fetch-data          Download the Bitext dataset
             removed            char n-grams) + LSA nearest-centre assign  type, severity      + FDR control
 ```
 
-### 1. Clean and redact
-Emails, phone numbers, links and long numbers are replaced with `[email]`, `[phone]`, `[link]`, `[number]` before anything is analysed, shown, saved or sent to an AI model.
+### 1. Load, clean and redact
+CSV, JSON and JSON Lines, including what Windows tools write (UTF-8 with BOM, PowerShell's UTF-16, Excel's Windows-1252). Day/month order is decided once for the whole date column, so `04/12` and `04/13` can't be read differently; ambiguous columns need `--dayfirst` or `--monthfirst`. Emails (also `name(at)site.com`), links, card and bank numbers, phone numbers, account references and postcodes are replaced with placeholders before anything is analysed, shown, saved or sent to an AI model. This is pattern-based: names and street addresses written in plain words get through, so treat reports as containing customer data.
 
 ### 2. Vectors (embeddings)
 Each ticket becomes a vector so that tickets with similar meaning sit close together. The default needs no download: **TF-IDF** over words and two-word phrases, plus character 3–5-grams (so typos like "oorder" and "puchase" still match), reduced to 128 dimensions with **LSA** (truncated SVD), which merges words used in similar contexts. Optional backends: a sentence-transformers model (`pip install -e ".[st]"`, `--embed st`) or an OpenAI-compatible embeddings API (`--embed openai`).
 
 ### 3. Topics
 1. **Discover** topics with **HDBSCAN** on a sample of up to 8,000 tickets. HDBSCAN finds dense groups and decides the number of topics itself; a topic must hold at least 1/300 of the sample.
-2. **Assign** every ticket to the most similar topic centre by cosine similarity, but only if the similarity is at least 0.2. The rest are counted as *unsorted* and shown as such, not forced into a topic.
+2. **Assign** every ticket to the most similar topic centre by cosine similarity, but only if the similarity is at least 0.2. The rest are counted as *unsorted* and shown as such, not forced into a topic. (Fewer than 10 or so tickets go straight to k-means.)
 
 Plain k-means was the first attempt. It needs the number of topics up front, and the standard way to choose it (the silhouette score) kept picking the largest k tried. The 0.2 threshold was chosen on the benchmark below.
 
@@ -87,7 +87,7 @@ Plain k-means was the first attempt. It needs the number of topics up front, and
 - **Examples**: the tickets closest to the topic centre, skipping near-duplicates.
 
 ### 5. Trends
-Tickets are counted per day (per week for more than 8 weeks of data). The last 7 days are compared with everything before. A topic's **expected** recent count is its earlier count times the *median* growth across topics, so a busy week for everyone isn't a spike, and one topic spiking doesn't make all the others look like they're falling (as scaling by the total would). A **Poisson test** gives the chance of a count this high by luck, and the **Benjamini–Hochberg** procedure controls the false discovery rate at 5% across all topics. Rising means: passes that test, at least 1.5× expected, and at least 5 tickets.
+Tickets are counted per day (per week for more than 8 weeks of data). The last 7 days are compared with everything before. A topic's **expected** recent count is its earlier count times the *median* growth across topics, so a busy week for everyone isn't a spike, and one topic spiking doesn't make all the others look like they're falling (as scaling by the total would). If nothing changed, each of a topic's tickets falls in the recent window with a fixed probability, so its recent count follows a binomial distribution; a **conditional binomial test** gives the chance of a count this high by luck. (A first version used a Poisson test that treated the earlier count as exact; an independent review showed it raised false alarms in about 1 month in 5 with no spike at all.) The **Benjamini–Hochberg** procedure then controls the false discovery rate at 5% across all topics. Rising means: passes that test, at least 1.5× expected, at least 5 recent tickets, and at least 10 earlier ones (so a topic's normal level is known).
 
 ### 6. Rank
 
@@ -104,20 +104,22 @@ On all **26,872** labelled messages of the Bitext dataset (27 true intents), eac
 
 | Method | Topics | Sorted | NMI | ARI | NMI* | ARI* |
 |---|---:|---:|---:|---:|---:|---:|
-| **Resonance** (HDBSCAN + assign) | 32 | 90% | **0.752** | **0.539** | **0.717** | 0.472 |
-| k-means, *told* the true number of intents | 27 | 100% | 0.711 | 0.496 | 0.711 | **0.496** |
-| k-means, k chosen by silhouette | 60 | 100% | 0.678 | 0.360 | 0.678 | 0.360 |
+| **Resonance** (HDBSCAN + assign) | 32 | 89% | **0.769** | **0.552** | **0.719** | 0.460 |
+| k-means, *told* the true number of intents | 27 | 100% | 0.696 | 0.447 | 0.696 | 0.447 |
+| k-means, k chosen by silhouette | 60 | 100% | 0.687 | 0.366 | 0.687 | 0.366 |
 | Keyword (group by each ticket's top word) | 542 | 100% | 0.629 | 0.144 | 0.628 | 0.143 |
 
 NMI (normalised mutual information) and ARI (adjusted Rand index) measure agreement with the true intents; 1 is perfect, ARI ≈ 0 is random. NMI and ARI are on the tickets each method sorted; **NMI\* and ARI\*** count unsorted tickets as one more topic, the like-for-like comparison.
 
-What this shows: without being told how many topics exist, Resonance matches k-means that *is* told (NMI\* 0.717 vs 0.711), and on the 90% of tickets it sorts, its topics are clearly cleaner. Raising the threshold trades coverage for cleaner topics:
+What this shows: without being told how many topics exist, Resonance does slightly better than k-means that *is* told (NMI\* 0.719 vs 0.696), and on the 89% of tickets it sorts, its topics are clearly cleaner (NMI 0.769). The assignment threshold trades coverage for cleaner topics:
 
 | Assignment threshold | 0.0 | 0.1 | **0.2** | 0.3 | 0.4 |
 |---|---:|---:|---:|---:|---:|
-| Tickets sorted | 100% | 98% | **90%** | 79% | 69% |
-| NMI on sorted tickets | 0.710 | 0.723 | **0.752** | 0.782 | 0.807 |
-| NMI\* (like for like) | 0.710 | 0.715 | **0.717** | 0.692 | 0.654 |
+| Tickets sorted | 100% | 98% | **89%** | 77% | 68% |
+| NMI on sorted tickets | 0.724 | 0.735 | **0.769** | 0.807 | 0.827 |
+| NMI\* (like for like) | 0.724 | 0.726 | **0.719** | 0.698 | 0.662 |
+
+A threshold of 0 to 0.1 scores best like for like; 0.2 gives that up by 0.005 for noticeably cleaner topics and an honest "unsorted" bucket for tickets that don't fit anywhere. It was chosen on this same dataset.
 
 ### Catching spikes
 TREND_RESULTS
