@@ -2,6 +2,8 @@
 
 **Find the problems hiding in your support queue.**
 
+**Live demo: https://jay-m007.github.io/resonance/** (runs in your browser, nothing is uploaded)
+
 Resonance reads thousands of customer-support conversations, groups them into issues, and ranks what to fix first: how many customers are affected, how upset they are, and what's growing fastest. Support tickets are the richest source of product information most companies have, and most of it is thrown away once a ticket is closed.
 
 > College project by [@jay-m007](https://github.com/jay-m007). It rebuilds the idea behind **Answerly** (2013–2016), a support-automation startup that tried to *deflect* tickets with canned answers and ran out of money. Resonance does the opposite: it treats tickets as product evidence. The idea comes from the Loot Drop rebuild plan for Answerly.
